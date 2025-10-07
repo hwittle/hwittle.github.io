@@ -1,23 +1,70 @@
+/* Element Styles */
 body {
     background-color: #000000;
     color: #FFFFFF;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     color: #FFFFFF;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; 
+    font-style: normal;
+}
+
+h3, h4 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600; 
+    font-style: normal;
+}
+
+h5, h6 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; 
+    font-style: normal;
 }
 
 p {
     color: #FFFFFF;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; 
+    font-style: normal;
+}
+
+section {
+
 }
 
 .container {
     width: 90%;
     margin: auto;
     overflow: hidden;
+}
+
+/* Text Styles */
+.caption {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300; 
+  font-style: normal;
+}
+
+.sub {
+    color: #ABABAB;
+}
+
+/* Section Styles */
+.title {
+
+}
+
+.navigation {
+
 }
 
 /* Responsive Styles */
