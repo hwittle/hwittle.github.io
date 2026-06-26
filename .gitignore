@@ -35,3 +35,6 @@ bower_components
 psd
 thumb
 sketch
+
+### Additional ignored files ###
+.md
