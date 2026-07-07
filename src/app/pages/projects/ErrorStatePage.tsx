@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
 
+import { LightboxImage } from "../../components/LightboxImage";
 import ErrorImage from "../../images/Connectivity Error State.png";
 
 export function ErrorStatePage() {
@@ -123,7 +124,7 @@ export function ErrorStatePage() {
         <div className="grid md:grid-cols-1 gap-6">
           <div className="border-2 border-foreground bg-card p-6">
             <div className="order-1">
-              <img
+              <LightboxImage
                 src={ErrorImage}
                 alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                 className="border-2 p-6"

@@ -95,7 +95,7 @@ export const projects: Project[] = [
   },
   {
     id: "tech-faq",
-    title: "FAQ Dsevelopment",
+    title: "FAQ Development",
     category: "Technical Writing",
     year: 2024,
     description:

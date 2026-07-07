@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
 
+import { LightboxImage } from "../../components/LightboxImage";
 import WishlistImage from "../../images/Wishlist.png";
 import SummerImage from "../../images/Summer Sale.png";
 import TradeImage from "../../images/Trade Offer.png";
@@ -119,7 +120,7 @@ export function UXCopyPushNotif() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               {/* Left column - Image */}
               <div className="order-1">
-                <img
+                <LightboxImage
                   src={WishlistImage}
                   alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                   className="border-2 p-6"
@@ -235,7 +236,7 @@ export function UXCopyPushNotif() {
               </div>
               {/* Right column - Image */}
               <div className="md:order-2 order-1">
-                <img
+                <LightboxImage
                   src={SummerImage}
                   alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                   className="border-2 p-6"
@@ -250,7 +251,7 @@ export function UXCopyPushNotif() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               {/* Left column - Image */}
               <div className="order-1">
-                <img
+                <LightboxImage
                   src={TradeImage}
                   alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                   className="border-2 p-6"
@@ -352,7 +353,7 @@ export function UXCopyPushNotif() {
               </div>
               {/* Right column - Image */}
               <div className="md:order-2 order-1">
-                <img
+                <LightboxImage
                   src={GiftImage}
                   alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                   className="border-2 p-6"
@@ -367,7 +368,7 @@ export function UXCopyPushNotif() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               {/* Left column - Image */}
               <div className="order-1">
-                <img
+                <LightboxImage
                   src={PlaytestImage}
                   alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
                   className="border-2 p-6"
