@@ -1,5 +1,5 @@
-# Whitney Tran's Portfolio
+## Whitney Tran's Portfolio
 
-## Technical & UX Writer
-
+Technical Writer & Editor | UX Writing | Documentation · FAQs · Content Strategy
+---
 Writing that meets people where they are. Crafting content that simplifies complexity, one word at a time.
