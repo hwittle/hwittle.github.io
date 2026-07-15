@@ -74,15 +74,16 @@ export function getGroupedProjects(): {
 }
 
 export const projects: Project[] = [
-  /*{
+  {
+    id: "content-audit",
     title: "Content Audit for Optimization",
     category: "UX Writing",
     year: 2026,
     description:
-      "Conducted a content audit for a travel platform on subsections in need of improvement.",
-    tags: ["Branding", "Content", "User Research"],
+      "Conducted an independent content audit of Hertz's desktop car rental booking flow, identifying friction points, manipulative copy patterns, and pricing transparency issues across five key pages.",
+    tags: ["Content Audit", "Content Strategy", "Copywriting"],
     slug: "content-audit-optimize",
-  },*/
+  },
   {
     id: "ux-error",
     title: "Error State Page",

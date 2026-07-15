@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
