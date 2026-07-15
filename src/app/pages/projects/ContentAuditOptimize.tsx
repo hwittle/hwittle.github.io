@@ -746,7 +746,7 @@ export function ContentAuditOptimize() {
         </div>
 
         {/* Table 5: Checkout */}
-        <div className="grid md:grid-cols-1 gap-6  pb-20">
+        <div className="grid md:grid-cols-1 gap-6">
           <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
             {/* Single grid container controlling all column widths */}
             <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">

@@ -3,6 +3,21 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+// Injects the GitHub Pages SPA path-restoration script into the built index.html.
+// Pairs with public/404.html which encodes the original path as ?p=... before redirecting to /.
+const githubPagesSpaPlugin = {
+  name: 'github-pages-spa',
+  transformIndexHtml(html: string) {
+    const script = `<script>
+      (function() {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) window.history.replaceState(null, '', p);
+      })();
+    </script>`;
+    return html.replace('<head>', '<head>' + script);
+  },
+};
+
 
 function figmaAssetResolver() {
   return {
@@ -26,6 +41,7 @@ export default defineConfig({
     // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    githubPagesSpaPlugin,
   ],
   resolve: {
     alias: {
