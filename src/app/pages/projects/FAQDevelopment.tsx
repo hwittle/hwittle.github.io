@@ -80,8 +80,9 @@ export function FAQDevelopment() {
               className="hover:underline"
               href="https://epson.com/Support/Projectors/PowerLite-Series/Epson-PowerLite-EB-L265F/s/SPT_V11HA72120#faq"
             >
-              <strong>FAQs</strong>.
+              <strong>FAQs</strong>
             </a>
+            .
           </p>
           <p>
             For a company with diverse product lines of consumer

@@ -74,22 +74,14 @@ export function PrintedSetupGuide() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p className="border-l-4 pl-4">
-            View the published setup guide as{" "}
+            View the published setup guide as a{" "}
             <a
               target="_blank"
               className="hover:underline"
-              href="https://files.support.epson.com/docid/cpd6/cpd64769/index.html"
+              href="https://files.support.epson.com/docid/cpd6/cpd64764.pdf"
             >
-              <strong>HTML</strong>
-            </a>{" "}
-            or{" "}
-            <a
-              target="_blank"
-              className="hover:underline"
-              href="https://files.support.epson.com/docid/cpd6/cpd64769.pdf"
-            >
-              <strong>PDF</strong>.
-            </a>
+              <strong>PDF</strong>
+            </a>.
           </p>
           <p>
             This setup guide was created to provide customers a

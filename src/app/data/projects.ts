@@ -1,81 +1,25 @@
 /**
- * PROJECT DATA - CENTRALIZED SOURCE OF TRUTH
+ * PROJECT DATA — single source of truth for all portfolio projects.
  *
- * File: /src/app/data/projects.ts
- *
- * Description:
- * Single source of truth for all portfolio project information.
- * This data is used across multiple pages to ensure consistency.
- *
- * Used By:
- * - /src/app/pages/Projects.tsx (project listing with filtering)
- * - /src/app/pages/projects/*.tsx (individual project detail pages)
- *
- * Data Structure:
- * - id: Unique identifier, also used for project numbering (with leading zeros)
- * - title: Project name
- * - category: Project type (Brand Identity, Web Development, Guide, etc.)
- * - year: Completion year
- * - description: Short project summary
- * - tags: Array of skills/technologies used (for filtering)
- * - slug: URL-friendly identifier (must match route paths in /src/app/routes.ts)
- *
- * Important:
- * When updating project information here, changes automatically appear on:
- * 1. Projects listing page (/projects)
- * 2. Individual project detail pages (/projects/:slug)
+ * Used by: Home.tsx (grouped listing) and each project detail page.
  *
  * When adding a new project:
- * 1. Add entry to this array
- * 2. Create corresponding page component in /src/app/pages/projects/
- * 3. Add route to /src/app/routes.ts (path must match slug)
+ * 1. Add an entry to the `projects` array below
+ * 2. Create the page component in /src/app/pages/projects/
+ * 3. Register its route in /src/app/routes.ts (path must match slug)
  */
 
 export interface Project {
-  id: string;
   title: string;
-  category: string; // Used as the group label (e.g. "Technical Writing", "UX Writing")
+  category: string; // Group label shown in Selected Works (e.g. "Technical Writing", "UX Writing")
   year: number;
   description: string;
   tags: string[];
-  slug: string; // Must match route path in routes.ts
-}
-
-/**
- * Returns projects sorted alphabetically by group (category), then by title within each group.
- * This is the canonical display/navigation order throughout the site.
- */
-export function getSortedProjects(): Project[] {
-  return [...projects].sort((a, b) => {
-    const catCmp = a.category.localeCompare(b.category);
-    if (catCmp !== 0) return catCmp;
-    return a.title.localeCompare(b.title);
-  });
-}
-
-/**
- * Returns projects grouped by category, with both groups and projects within
- * each group sorted alphabetically.
- */
-export function getGroupedProjects(): {
-  group: string;
-  projects: Project[];
-}[] {
-  const sorted = getSortedProjects();
-  const map = new Map<string, Project[]>();
-  for (const p of sorted) {
-    if (!map.has(p.category)) map.set(p.category, []);
-    map.get(p.category)!.push(p);
-  }
-  return Array.from(map.entries()).map(([group, projects]) => ({
-    group,
-    projects,
-  }));
+  slug: string; // Must match route path in routes.ts; also used as React key
 }
 
 export const projects: Project[] = [
   {
-    id: "content-audit",
     title: "Content Audit for Optimization",
     category: "UX Writing",
     year: 2026,
@@ -85,7 +29,6 @@ export const projects: Project[] = [
     slug: "content-audit-optimize",
   },
   {
-    id: "ux-error",
     title: "Error State Page",
     category: "UX Writing",
     year: 2026,
@@ -95,7 +38,6 @@ export const projects: Project[] = [
     slug: "error-state-page",
   },
   {
-    id: "tech-faq",
     title: "FAQ Development",
     category: "Technical Writing",
     year: 2024,
@@ -104,18 +46,7 @@ export const projects: Project[] = [
     tags: ["Adobe Dreamweaver", "HTML", "Oxygen XML Editor"],
     slug: "faq-development",
   },
-  /*{
-    id: "ux-onboard",
-    title: "Mobile Onboarding Flow",
-    category: "UX Writing",
-    year: 2026,
-    description:
-      "Designed a mobile onboarding flow for an app, identifing and analyzing the main friction points users encounter.",
-    tags: ["Product Management", "Technical Specs"],
-    slug: "mobile-onboarding-flow",
-  },*/
   {
-    id: "tech-online-guide",
     title: "Online User's Guide",
     category: "Technical Writing",
     year: 2025,
@@ -125,7 +56,6 @@ export const projects: Project[] = [
     slug: "online-users-guide",
   },
   {
-    id: "tech-printed-guide",
     title: "Printed Setup Guide",
     category: "Technical Writing",
     year: 2025,
@@ -134,18 +64,7 @@ export const projects: Project[] = [
     tags: ["Adobe InDesign", "Printed", "User's Guide"],
     slug: "printed-setup-guide",
   },
-  /*{
-  id: "tech-api",
-    title: "Steam Web API Documenation",
-    category: "Technical Writing",
-    year: 2026,
-    description:
-      ".",
-    tags: ["API", "GitHub", "MkDocs"],
-    slug: "steam-web-api",
-  },*/
   {
-    id: "ux-push-notif",
     title: "UX Copy for Push Notifications",
     category: "UX Writing",
     year: 2026,
@@ -155,3 +74,22 @@ export const projects: Project[] = [
     slug: "uxcopy-push-notif",
   },
 ];
+
+// Sorted and grouped once at module load — O(1) for all callers.
+const _sorted = [...projects].sort((a, b) => {
+  const c = a.category.localeCompare(b.category);
+  return c !== 0 ? c : a.title.localeCompare(b.title);
+});
+
+const _grouped = (() => {
+  const map = new Map<string, Project[]>();
+  for (const p of _sorted) {
+    const bucket = map.get(p.category) ?? [];
+    bucket.push(p);
+    map.set(p.category, bucket);
+  }
+  return Array.from(map.entries()).map(([group, projects]) => ({ group, projects }));
+})();
+
+export const getSortedProjects = (): Project[] => _sorted;
+export const getGroupedProjects = (): { group: string; projects: Project[] }[] => _grouped;

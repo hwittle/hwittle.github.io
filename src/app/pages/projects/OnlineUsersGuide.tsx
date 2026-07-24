@@ -88,8 +88,8 @@ export function OnlineUsersGuide() {
               className="hover:underline"
               href="https://download2.ebz.epson.net/sec_pubs_visual/eai/projectors/pdf/useg/EN/UsersGuide_EBL890E_EN_EAI.pdf"
             >
-              <strong>PDF</strong>.
-            </a>
+              <strong>PDF</strong>
+            </a>.
           </p>
           <p>
             This user's guide was developed to cover a family of
