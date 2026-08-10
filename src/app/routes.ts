@@ -26,6 +26,7 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./pages/Root";
 import { Home } from "./pages/Home";
+import { APIDocumentation } from "./pages/projects/APIDocumentation";
 import { ContentAuditOptimize } from "./pages/projects/ContentAuditOptimize";
 import { ErrorStatePage } from "./pages/projects/ErrorStatePage";
 import { FAQDevelopment } from "./pages/projects/FAQDevelopment";
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       // Individual project detail pages - paths match slugs from data/projects.ts
+      {
+        path: "projects/api-documentation",
+        Component: APIDocumentation,
+      },
       {
         path: "projects/content-audit-optimize",
         Component: ContentAuditOptimize,

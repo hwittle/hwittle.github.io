@@ -20,6 +20,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "API Documentation",
+    category: "Technical Writing",
+    year: 2026,
+    description:
+      "Developed unofficial API documentation for the Steam Web API, covering five endpoints with detailed parameter references, real response examples across JSON, XML, and VDF formats, and observations on undocumented fields and privacy behaviors.",
+    tags: ["Docs-as-Code", "Markdown", "MkDocs", "Postman"],
+    slug: "api-documentation",
+  },
+  {
     title: "Content Audit for Optimization",
     category: "UX Writing",
     year: 2026,
@@ -88,8 +97,14 @@ const _grouped = (() => {
     bucket.push(p);
     map.set(p.category, bucket);
   }
-  return Array.from(map.entries()).map(([group, projects]) => ({ group, projects }));
+  return Array.from(map.entries()).map(([group, projects]) => ({
+    group,
+    projects,
+  }));
 })();
 
 export const getSortedProjects = (): Project[] => _sorted;
-export const getGroupedProjects = (): { group: string; projects: Project[] }[] => _grouped;
+export const getGroupedProjects = (): {
+  group: string;
+  projects: Project[];
+}[] => _grouped;
