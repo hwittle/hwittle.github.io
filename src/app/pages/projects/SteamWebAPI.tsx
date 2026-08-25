@@ -3,11 +3,6 @@ import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
 
 import { LightboxImage } from "../../components/LightboxImage";
-import WishlistImage from "../../images/Wishlist.png";
-import SummerImage from "../../images/Summer Sale.png";
-import TradeImage from "../../images/Trade Offer.png";
-import GiftImage from "../../images/Gift Received.png";
-import PlaytestImage from "../../images/Playtest.png";
 
 export function SteamWebAPI() {
   const navigate = useNavigate();

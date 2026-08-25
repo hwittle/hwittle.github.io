@@ -3,11 +3,11 @@ import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
 
 import { LightboxImage } from "../../components/LightboxImage";
-import WishlistImage from "../../images/Wishlist.png";
-import SummerImage from "../../images/Summer Sale.png";
-import TradeImage from "../../images/Trade Offer.png";
-import GiftImage from "../../images/Gift Received.png";
-import PlaytestImage from "../../images/Playtest.png";
+import WishlistImage from "../../images/wishlist-1x1.png";
+import SummerImage from "../../images/summer-sale-1x1.png";
+import TradeImage from "../../images/trade-offer-1x1.png";
+import GiftImage from "../../images/gift-received-1x1.png";
+import PlaytestImage from "../../images/playtest-1x1.png";
 
 export function UXCopyPushNotif() {
   const navigate = useNavigate();
@@ -80,6 +80,16 @@ export function UXCopyPushNotif() {
           Overview
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
+          <p className="border-l-4 pl-4">
+            View the project on{" "}
+            <a
+              target="_blank"
+              className="hover:underline"
+              href="https://www.figma.com/design/f5ycmpV7eFaxl0rZd8vRdJ/Push-Notification-for-Steam?node-id=1-3733&p=f"
+            >
+              <strong>Figma</strong>
+            </a>.
+          </p>
           <p>
             This is a spec project completed as part of the
             UXcel UX Writing certification. The goal was to

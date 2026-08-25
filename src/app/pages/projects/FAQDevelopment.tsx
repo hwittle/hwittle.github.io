@@ -85,22 +85,21 @@ export function FAQDevelopment() {
             .
           </p>
           <p>
-            For a company with diverse product lines of consumer
-            printers, business printers, and projectors, a
-            scalable FAQ system was developed and maintained to
-            support product launches across multiple categories.
-            Rather than writing FAQs from scratch for every new
-            product, a library of reusable FAQ templates was
-            built and organized by product type, allowing
-            general FAQs to be deployed quickly while
-            product-specific FAQs were developed alongside the
-            corresponding user's guide.
+            To support product launches for a wide range of
+            consumer printers, business printers, and
+            projectors, we created and maintained a scalable FAQ
+            system. Instead of starting from scratch each time,
+            we built a library of reusable FAQ templates
+            organized by product type. This made it easy to
+            quickly publish general FAQs, while product-specific
+            FAQs were developed together with the user guides.
           </p>
           <p>
-            When live on a product's support page, FAQs are
-            categorized into tabs with multiple questions, and
-            made available in multiple languages to support
-            North American and Latin American markets.
+            Once the FAQs go live on a product’s support page,
+            they are sorted into tabs with several questions in
+            each. They are also available in multiple languages
+            to help customers in North America and Latin
+            America.
           </p>
         </div>
       </section>
@@ -226,27 +225,27 @@ export function FAQDevelopment() {
                   Assigned to both the technical documentation
                   and FAQ teams, with FAQ assignments sometimes
                   covering products whose user's guides were
-                  handled by a separate writer
+                  handled by a separate writer.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Product-specific FAQs rely heavily on
-                  finalized user's guide content approved by
-                  product management and the writing team,
-                  making delays in the documentation pipeline a
-                  direct bottleneck for FAQ delivery
+                  finalized user guide content approved by
+                  product management and the writing team.
+                  Delays in the documentation pipeline directly
+                  bottleneck FAQ delivery.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Shifting launch dates and product manager
-                  delays created unpredictable timelines,
-                  compressing the window between receiving
-                  finalized materials and the product reaching
-                  the first customer
+                  * Shifting launch dates and product manager
+                  delays created unpredictable timelines. This
+                  shortened the time between receiving finalized
+                  materials and the product reaching the first
+                  customer.
                 </span>
               </li>
               <li className="flex items-start">
@@ -254,9 +253,9 @@ export function FAQDevelopment() {
                 <span>
                   Localization requests had to be coordinated
                   with a shared localization team responsible
-                  for multiple languages and multiple concurrent
-                  projects, adding another scheduling dependency
-                  to an already tight workflow
+                  for multiple languages and concurrent
+                  projects. This added another scheduling
+                  dependency to an already tight workflow.
                 </span>
               </li>
               <li className="flex items-start">
@@ -264,10 +263,10 @@ export function FAQDevelopment() {
                 <span>
                   The HTML publishing workflow required routing
                   files through a technical intermediary who ran
-                  a cleanup script before upload, introducing a
-                  scheduling constraint since that team member
+                  a cleanup script before upload. This created a
+                  scheduling constraint because that team member
                   ended their workday an hour earlier than the
-                  writing team
+                  writing team.{" "}
                 </span>
               </li>
             </ul>
@@ -284,18 +283,18 @@ export function FAQDevelopment() {
                   Maintained active communication during product
                   meetings to stay ahead of shifting timelines
                   and anticipate delays before they became
-                  critical
+                  serious.{" "}
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  When delays were inbound, deployed general
+                  When delays were expected, deployed general
                   FAQs from the existing library that applied to
-                  the product, ensuring the FAQ section was
+                  the product. This ensured the FAQ section was
                   populated with accurate baseline content while
                   product-specific FAQs were still in
-                  development
+                  development.
                 </span>
               </li>
               <li className="flex items-start">
@@ -303,9 +302,9 @@ export function FAQDevelopment() {
                 <span>
                   Tracked shipping dates and estimated
                   first-customer dates to establish a clear
-                  deadline for when all FAQs needed to be live,
-                  working backward from that date to manage
-                  localization requests and upload schedules
+                  deadline for when all FAQs needed to be live.
+                  Worked backward from that date to manage
+                  localization requests and upload schedules.
                 </span>
               </li>
               <li className="flex items-start">
@@ -315,7 +314,7 @@ export function FAQDevelopment() {
                   translation team, reviewed returned content
                   for accuracy and consistency, and managed the
                   full upload and verification process for all
-                  translated FAQ versions
+                  translated FAQ versions.{" "}
                 </span>
               </li>
 
@@ -324,10 +323,10 @@ export function FAQDevelopment() {
                 <span>
                   Contributed to and maintained the FAQ template
                   library, adding comments to indicate which
-                  product types each template applied to,
-                  enabling faster deployment across future
-                  product launches and manually uploading if the
-                  database will not sync in time
+                  product types each template applied to. This
+                  enabled faster deployment across future
+                  product launches and manual uploading if the
+                  database did not sync in time.
                 </span>
               </li>
             </ul>
@@ -342,45 +341,38 @@ export function FAQDevelopment() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            The FAQ system this work contributed to supported
-            product launches across multiple product lines, with
-            each launch drawing from a library of reusable
-            templates covering anywhere from 5 to 20 general
-            FAQs per product type alongside 20 to 60
-            product-specific FAQs depending on the product
+            The FAQ system I worked on helped support product
+            launches for several product lines. For each launch,
+            we used a library of reusable templates that
+            included 5 to 20 general FAQs for each product type,
+            plus 20 to 60 product-specific FAQs depending on the
             category.
           </p>
           <p>
-            The most valuable aspect of maintaining a
-            well-organized template library became clear during
-            accelerated launch timelines. When a product's
-            launch date moved up and the user's guide was not
-            yet finalized, having general FAQs ready to deploy
-            meant the product's support page was never empty at
-            launch. The product-specific FAQs followed once
-            finalized materials were available, keeping the
-            content accurate without holding up the launch.
+            Keeping the template library organized proved
+            especially helpful when launch dates were moved up.
+            If the user guide wasn’t finished yet, we could
+            still publish general FAQs so the support page was
+            never empty at launch. Once the final materials were
+            ready, we added the product-specific FAQs to keep
+            everything accurate without delaying the launch.
           </p>
           <p>
-            This project reinforced that FAQ writing is as much
-            a workflow management challenge as it is a writing
-            one. The quality of the published content depended
-            not just on the writing itself but on coordinating
-            across product management, technical documentation,
-            localization, and the publishing pipeline
-            simultaneously. Staying ahead of those dependencies
-            rather than reacting to them was what kept launches
-            on schedule.
+            This project showed me that writing FAQs is just as
+            much about managing workflows as it is about
+            writing. Good content depended on working closely
+            with product management, technical documentation,
+            localization, and the publishing team all at once.
+            Planning ahead and staying on top of these tasks was
+            key to keeping launches on track.
           </p>
           <p>
-            One area I would revisit is the HTML publishing
-            workflow. Routing files through a technical
-            intermediary for a cleanup script added a scheduling
-            dependency that compressed the team's working window
-            daily. Bringing that script capability in-house or
-            automating it would remove a bottleneck that
-            affected every single publish cycle, not just during
-            tight timelines.
+            One thing I would change is the HTML publishing
+            workflow. Sending files to a technical team member
+            for a cleanup script created a daily scheduling
+            bottleneck. If we could handle the script ourselves
+            or automate it, we would remove this bottleneck from
+            every publish cycle, not just during busy times.
           </p>
         </div>
       </section>

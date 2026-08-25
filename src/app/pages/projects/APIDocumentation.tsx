@@ -89,26 +89,29 @@ export function APIDocumentation() {
             .
           </p>
           <p>
-            The Steam Web API is a set of HTTP endpoints
-            provided by Valve Corporation that allows developers
-            to access Steam user data, game information, and
-            community features. Despite being widely used by
-            third-party developers, Valve's official
-            documentation is minimal. Parameter descriptions are
-            inconsistent, real response examples are absent, and
-            behaviors around privacy settings and undocumented
-            fields go unaddressed.
+            The Steam Web API consists of a number of HTTP
+            endpoints offered by Valve Corporation and is used
+            by developers to obtain Steam user data, information
+            about games, and details regarding community
+            features. Even though the API is commonly used by
+            third-party developers, the official documentation
+            provided by Valve is very limited. The descriptions
+            of the parameters are inconsistent, there are no
+            actual examples of responses given, and the way the
+            privacy settings and the undocumented fields behave
+            is not explained.
           </p>
           <p>
-            This project set out to create clear,
-            developer-friendly reference documentation for five
-            commonly used Steam Web API endpoints, grounding
-            every entry in real API responses generated through
-            hands-on testing rather than assumptions based on
-            incomplete official sources. The documentation was
-            built using MkDocs Material and deployed to GitHub
-            Pages via GitHub Actions, following a docs-as-code
-            workflow.
+            The aim of this project was to produce clear
+            reference documentation that is convenient for
+            developers for five Steam Web API endpoints, basing
+            each entry on actual API responses which had been
+            obtained through practical testing rather than
+            making assumptions based on the incomplete official
+            sources. The documentation was created using MkDocs
+            Material and then deployed to GitHub Pages by means
+            of GitHub Actions as part of a docs-as-code
+            approach.
           </p>
         </div>
       </section>
@@ -120,9 +123,9 @@ export function APIDocumentation() {
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Audience
-            </h4>
+            </h3>
             <p>
               Developers building Steam integrations or
               third-party applications who need accurate,
@@ -131,11 +134,11 @@ export function APIDocumentation() {
             </p>
           </div>
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Endpoints Documented
-            </h4>
+            </h3>
             <ul className="space-y-2 leading-relaxed">
-              <h5 className="font-bold">IPlayerService:</h5>
+              <h4 className="font-bold">IPlayerService:</h4>
               <li className="flex items-start pl-4">
                 <span className="mr-2">▸</span>
                 <span>GetOwnedGames</span>
@@ -146,7 +149,7 @@ export function APIDocumentation() {
               </li>
             </ul>
             <ul className="space-y-2 leading-relaxed">
-              <h5 className="font-bold mt-3">ISteamUser:</h5>
+              <h4 className="font-bold mt-3">ISteamUser:</h4>
               <li className="flex items-start pl-4">
                 <span className="mr-2">▸</span>
                 <span>GetFriendList</span>
@@ -157,7 +160,9 @@ export function APIDocumentation() {
               </li>
             </ul>
             <ul className="space-y-2 leading-relaxed">
-              <h5 className="font-bold mt-3">ISteamUserStats:</h5>
+              <h4 className="font-bold mt-3">
+                ISteamUserStats:
+              </h4>
               <li className="flex items-start pl-4">
                 <span className="mr-2">▸</span>
                 <span>GetPlayerAchievements</span>
@@ -166,9 +171,9 @@ export function APIDocumentation() {
           </div>
 
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Tools Used
-            </h4>
+            </h3>
             <ul className="space-y-2 leading-relaxed">
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
@@ -208,9 +213,9 @@ export function APIDocumentation() {
           </div>
 
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Distribution
-            </h4>
+            </h3>
             <p>
               Publicly available as a static documentation site
               at{" "}
@@ -302,35 +307,36 @@ export function APIDocumentation() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This project reinforced that good documentation
-            fills the gaps that official sources leave behind.
-            Valve's existing Steam Web API documentation
-            provides a functional but minimal baseline, and the
-            most valuable contributions came from hands-on
-            testing rather than transcribing what was already
-            written. Discovering undocumented fields,
-            inconsistent data types, and privacy behaviors that
-            silently affect responses gave the documentation a
-            practical depth that developers would not find
+            The project showed that well-written documentation
+            covers the areas that official sources fail to
+            address. While Valve's current Steam Web API
+            documentation offers a functional yet basic level of
+            coverage, the most useful contributions were made
+            through actual testing rather than by simply copying
+            what had already been written. It was only by
+            identifying undocumented fields, inconsistent data
+            types, and privacy practices that quietly influence
+            the responses that the documentation acquired a
+            practical depth which developers could not obtain
             elsewhere.
           </p>
           <p>
-            Working with a docs-as-code workflow for the first
-            time made the connection between documentation and
-            software development tangible. Writing in Markdown,
-            managing versions through GitHub, and automating
-            deployment through GitHub Actions mirrors how
-            engineering teams ship code, and understanding that
-            workflow firsthand makes collaborating with
-            developers on documentation projects more
-            meaningful.
+            When you first adopt a docs-as-code workflow, the
+            link between documentation and software development
+            becomes clear. Since writing in Markdown, handling
+            versions using GitHub, and automating deployments
+            with GitHub Actions is just like the way engineering
+            teams release code, gaining a first-hand
+            understanding of that process makes it more
+            meaningful to work with developers on documentation
+            projects.
           </p>
           <p>
-            Future additions include expanding endpoint coverage
-            to interfaces such as ISteamNews or ISteamApps, and
-            incorporating a dedicated troubleshooting section
-            based on common error responses observed during
-            testing.
+            The improvements ahead will consist of expanding the
+            coverage to include interfaces such as ISteamNews or
+            ISteamApps, together with the inclusion of a
+            separate troubleshooting section based on the common
+            error responses observed during testing.
           </p>
         </div>
       </section>

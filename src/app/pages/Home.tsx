@@ -69,22 +69,24 @@ export function Home() {
               About
             </h2>
             <p className="mb-4 leading-relaxed">
-              I've spent three years turning technical
-              complexity into content that actually makes sense
-              to people. Before that, I taught K–12 students to
-              build games and apps, and learned that the moment
-              someone stops feeling intimidated and starts
-              leaning in is worth every word you choose
-              carefully.
+              For three years I have worked on transforming
+              technical complexity into content that actually
+              makes sense to people; earlier in my career I
+              taught K–12 students how to build games and apps,
+              and from that experience I realised that the point
+              at which someone ceases to feel intimidated and
+              begins to engage is more than worth the careful
+              choice of each word.
             </p>
             <p className="mb-4 leading-relaxed">
-              That experience shapes how I write. Programming
-              focuses on functionality, writing on translation,
-              UX on navigation. The best experiences happen when
-              all three work together. That's the balance I
-              bring to every project: content that's clear
-              enough to move people forward without making
-              complexity feel overwhelming.
+              The way I write is influenced by that experience:
+              programming emphasizes functionality, writing
+              stresses translation, and UX is concerned with
+              navigation. The finest experiences are achieved
+              when all three aspects work in unison, and that is
+              the balance I apply to each project—ensuring the
+              content is clear enough to get people moving
+              without making the complexity seem overwhelming.
             </p>
           </div>
           <div className="min-w-0">
@@ -94,7 +96,9 @@ export function Home() {
             <div className="bg-card border-2 border-foreground p-8 w-full">
               <div className="space-y-3">
                 <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">EMAIL:</span>
+                  <span className="font-bold mr-4 w-24 shrink-0">
+                    EMAIL:
+                  </span>
                   <a
                     target="_blank"
                     href="mailto:whitney.tran@proton.me"
@@ -104,7 +108,9 @@ export function Home() {
                   </a>
                 </div>
                 <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">LINKEDIN:</span>
+                  <span className="font-bold mr-4 w-24 shrink-0">
+                    LINKEDIN:
+                  </span>
                   <a
                     target="_blank"
                     href="https://www.linkedin.com/in/whitneytran/"
@@ -114,7 +120,9 @@ export function Home() {
                   </a>
                 </div>
                 <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">GITHUB:</span>
+                  <span className="font-bold mr-4 w-24 shrink-0">
+                    GITHUB:
+                  </span>
                   <a
                     target="_blank"
                     href="https://github.com/hwittle"
@@ -146,72 +154,87 @@ export function Home() {
         </div>
 
         <div className="space-y-12">
-          {groupedProjects.map(({ group, projects: groupProjects }) => (
-            <div key={group}>
-              {groupedProjects.length > 1 && (
-                <h3 className="text-xl uppercase tracking-widest text-muted-foreground mb-6 border-b border-foreground/30 pb-2">
-                  {group}
-                </h3>
-              )}
-              <div className="grid gap-8 md:gap-12">
-                {groupProjects.map((project) => (
-                  <article
-                    key={project.slug}
-                    className="border-2 border-foreground bg-card p-6 md:p-8 hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
-                  >
-                    <div className="grid md:grid-cols-[1fr_2fr] gap-6">
-                      <div className="space-y-4">
-                        <h3 className="text-2xl md:text-3xl uppercase leading-tight">
-                          {project.title}
-                        </h3>
-                        <div className="space-y-2">
-                          <div className="flex items-center text-sm">
-                            <span className="font-bold mr-2 w-24">CATEGORY:</span>
-                            <span>{project.category}</span>
+          {groupedProjects.map(
+            ({ group, projects: groupProjects }) => (
+              <div key={group}>
+                {groupedProjects.length > 1 && (
+                  <h3 className="text-xl uppercase tracking-widest text-muted-foreground mb-6 border-b border-foreground/30 pb-2">
+                    {group}
+                  </h3>
+                )}
+                <div className="grid gap-8 md:gap-12">
+                  {groupProjects.map((project) => (
+                    <article
+                      key={project.slug}
+                      className="border-2 border-foreground bg-card p-6 md:p-8 hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
+                    >
+                      <div className="grid md:grid-cols-[1fr_2fr] gap-6">
+                        <div className="space-y-4">
+                          <h3 className="text-2xl md:text-3xl uppercase leading-tight">
+                            {project.title}
+                          </h3>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm">
+                              <span className="font-bold mr-2 w-24">
+                                CATEGORY:
+                              </span>
+                              <span>{project.category}</span>
+                            </div>
+                            <div className="flex items-center text-sm">
+                              <span className="font-bold mr-2 w-24">
+                                YEAR:
+                              </span>
+                              <span>{project.year}</span>
+                            </div>
                           </div>
-                          <div className="flex items-center text-sm">
-                            <span className="font-bold mr-2 w-24">YEAR:</span>
-                            <span>{project.year}</span>
+                          <div className="flex flex-wrap gap-2 pt-2">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-3 py-1 bg-background border border-foreground text-xs uppercase tracking-wide"
+                              >
+                                {tag}
+                              </span>
+                            ))}
                           </div>
                         </div>
-                        <div className="flex flex-wrap gap-2 pt-2">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-3 py-1 bg-background border border-foreground text-xs uppercase tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
 
-                      <div className="flex flex-col justify-between">
-                        <p className="leading-relaxed mb-6">
-                          {project.description}
-                        </p>
-                        <div className="flex gap-4">
-                          <Link
-                            to={`/projects/${project.slug}`}
-                            className="px-6 py-2 border-2 border-foreground uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors"
-                          >
-                            View Project
-                          </Link>
+                        <div className="flex flex-col justify-between">
+                          <p className="leading-relaxed mb-6">
+                            {project.description}
+                          </p>
+                          <div className="flex gap-4">
+                            <Link
+                              to={`/projects/${project.slug}`}
+                              className="px-6 py-2 border-2 border-foreground uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors"
+                            >
+                              View Project
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ),
+          )}
         </div>
       </section>
 
       {/* FOOTER */}
       <div className="text-center text-sm text-muted-foreground mt-16 pt-8 pb-12 border-t border-foreground/20">
         <p>
-          ◆ <span className="hidden sm:inline">{projects.length} Projects ◆ </span>Est. 2026<span className="hidden sm:inline"> ◆ Crafted with care</span> ◆
+          ◆{" "}
+          <span className="hidden sm:inline">
+            {projects.length} Projects ◆{" "}
+          </span>
+          Est. 2026
+          <span className="hidden sm:inline">
+            {" "}
+            ◆ Crafted with care
+          </span>{" "}
+          ◆
         </p>
       </div>
     </div>

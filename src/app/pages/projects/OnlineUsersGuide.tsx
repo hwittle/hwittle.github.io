@@ -89,22 +89,22 @@ export function OnlineUsersGuide() {
               href="https://download2.ebz.epson.net/sec_pubs_visual/eai/projectors/pdf/useg/EN/UsersGuide_EBL890E_EN_EAI.pdf"
             >
               <strong>PDF</strong>
-            </a>.
+            </a>
+            .
           </p>
           <p>
-            This user's guide was developed to cover a family of
-            12 projector models under a single unified document,
-            reducing redundancy while accounting for
-            model-specific features and UI differences. During
-            this project, the North American documentation
-            branch transitioned to a new template established by
-            the parent company's overseas documentation team,
-            requiring close cross-cultural collaboration to meet
+            I created this user guide to cover 12 projector
+            models in a single document. This helped us avoid
+            repeating information while still including details
+            for each model and its unique interfaces. While
+            working on this, our North American documentation
+            team switched to a new template from our parent
+            company overseas. This meant we had to work closely
+            with our colleagues abroad to ensure the guide met
             both international formatting standards and North
-            American legal compliance requirements. The
-            finalized document was published as both a
-            navigable, searchable HTML version on the North
-            American website and a PDF version managed by the
+            American legal requirements. In the end, I published
+            the guide as a searchable HTML version on the North
+            American website and as a PDF managed by the
             overseas team.
           </p>
         </div>
@@ -117,7 +117,7 @@ export function OnlineUsersGuide() {
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">Format</h4>
+            <h3 className="font-bold mb-3 uppercase">Format</h3>
             <ul className="space-y-2 leading-relaxed">
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
@@ -130,9 +130,9 @@ export function OnlineUsersGuide() {
             </ul>
           </div>
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Audience
-            </h4>
+            </h3>
             <ul className="space-y-2 leading-relaxed">
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
@@ -151,9 +151,9 @@ export function OnlineUsersGuide() {
             </ul>
           </div>
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Tools Used
-            </h4>
+            </h3>
             <ul className="space-y-2 leading-relaxed">
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
@@ -166,15 +166,16 @@ export function OnlineUsersGuide() {
             </ul>
           </div>
           <div className="border-2 border-foreground bg-card p-6">
-            <h4 className="font-bold mb-3 uppercase">
+            <h3 className="font-bold mb-3 uppercase">
               Distribution
-            </h4>
+            </h3>
             <ul className="space-y-2 leading-relaxed">
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Navigable and searchable HTML published to
-                  North and Latin America websites (handled uploading for localization)
+                  North and Latin America websites (handled
+                  uploading for localization)
                 </span>
               </li>
               <li className="flex items-start">
@@ -202,32 +203,31 @@ export function OnlineUsersGuide() {
                 <span className="mr-2">▸</span>
                 <span>
                   Assigned to a 12-model projector family with
-                  no existing unified guide, requiring a full
-                  feature comparison across all models to
-                  determine what content could be shared and
-                  what required model-specific caveats
+                  no unified guide. Required a full feature
+                  comparison across all models to determine
+                  shared content and model-specific caveats.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  The overseas documentation branch was
-                  designated to handle the English version of
-                  the user's guide for North American markets,
-                  but their output lacked required NA-specific
-                  legal compliance content including coin
-                  battery hazard warnings, laser safety
-                  warnings, and other regulatory notices
+                  The overseas documentation branch handled the
+                  English version of the user's guide for North
+                  American markets, but their output lacked the
+                  required NA-specific legal compliance content,
+                  including coin-battery hazard warnings,
+                  laser-safety warnings, and other regulatory
+                  notices.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Translated English copy from the overseas team
-                  contained inconsistent grammar and terminology
-                  flow, suggesting an absence of a standardized
-                  translation memory or terminology management
-                  system
+                  The translated English copy from the overseas
+                  team contained inconsistent grammar and
+                  terminology. This suggests an absence of a
+                  standardized translation memory or terminology
+                  management system.
                 </span>
               </li>
               <li className="flex items-start">
@@ -235,26 +235,26 @@ export function OnlineUsersGuide() {
                 <span>
                   The PDF editing workflow required routing all
                   edits back through the overseas team for
-                  implementation, creating a significant
-                  bottleneck in the revision process
+                  implementation. This created a significant
+                  bottleneck in the revision process.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Version control was inconsistently maintained
-                  by the overseas team, resulting in duplicate
-                  guides being created from outdated source
-                  files that did not include previously
-                  submitted edits
+                  by the overseas team. This resulted in
+                  duplicate guides created from outdated source
+                  files that lacked edits previously submitted.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Several senior writers were laid off during
-                  this project, reducing team capacity during an
-                  already complex cross-branch collaboration
+                  this project, reducing the team's capacity
+                  amid an already complex cross-branch
+                  collaboration.
                 </span>
               </li>
             </ul>
@@ -268,24 +268,24 @@ export function OnlineUsersGuide() {
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Independently analyzed specifications across
-                  all 12 models using color-coded Excel
-                  comparisons to identify differences before any
-                  writing began and verified findings with
-                  manager and team lead in internal review
-                  meetings before confirming the unified guide
-                  approach with the product manager
+                  Analyzed specifications across all 12 models
+                  using color-coded Excel comparisons to
+                  identify differences before writing. Verified
+                  findings with manager and team lead in
+                  internal review meetings, then confirmed the
+                  unified guide approach with the product
+                  manager.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Established a collaborative working
-                  relationship with the overseas documentation
-                  branch to align on template standards while
-                  negotiating the inclusion of NA-specific legal
-                  compliance content including coin battery
-                  hazard warnings and laser safety notices
+                  Established a collaborative relationship with
+                  the overseas documentation branch to align on
+                  template standards and negotiate the inclusion
+                  of NA-specific legal compliance content,
+                  including coin battery hazard warnings and
+                  laser safety notices.
                 </span>
               </li>
               <li className="flex items-start">
@@ -293,8 +293,8 @@ export function OnlineUsersGuide() {
                 <span>
                   Proofread and rewrote translated English copy
                   to correct grammar inconsistencies, improve
-                  flow, and ensure terminology remained
-                  consistent throughout the 291-page document
+                  flow, and ensure consistent terminology
+                  throughout the 291-page document.
                 </span>
               </li>
               <li className="flex items-start">
@@ -302,25 +302,25 @@ export function OnlineUsersGuide() {
                 <span>
                   Identified and resolved version control
                   discrepancies by flagging outdated source
-                  files and ensuring all edits were reapplied to
-                  the correct document version
+                  files and ensuring edits were applied to the
+                  correct document version.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Self-edited HTML output files in Dreamweaver
-                  for the North American website publication, bypassing the
-                  PDF bottleneck by managing the web version
-                  independently
+                  Edited HTML output files in Dreamweaver for
+                  the North American website publication,
+                  bypassing the PDF bottleneck by managing the
+                  web version directly.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Documented and trained manager and teammates
-                  on the HTML editing workflow so the process
-                  could be replicated across other projects
+                  on the HTML editing workflow to enable
+                  replication across other projects.
                 </span>
               </li>
             </ul>
@@ -335,47 +335,41 @@ export function OnlineUsersGuide() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            The finalized user's guide totaled 291 pages
-            covering 12 projector models, published in both a
-            navigable HTML format on the North American website
-            and as a PDF distributed by the overseas team. Additional in-box
-            warranty, quick reference sheet, and FAQs
-            were handled independently by the North American
-            team.
+            The completed user's guide was 291 pages long and
+            covered 12 projector models. It was published as a
+            navigable HTML on the North American website and as
+            a PDF for the overseas team. The North American team
+            also handled the in-box warranty, quick reference
+            sheet, and FAQs separately.
           </p>
           <p>
-            This project was one of the more complex
-            collaborations I worked on, involving not just the
-            writing itself but navigating a cross-branch
-            documentation workflow with significant structural
-            gaps. The PDF bottleneck in particular highlighted
-            how version control and clear revision workflows are
-            as critical to documentation quality as the writing
-            itself. Without a reliable system for tracking
-            edits, carefully written changes risk being lost
-            entirely.
+            This was one of the more complex projects I worked
+            on. It involved not only writing but also managing a
+            documentation workflow across different branches,
+            which had some major gaps. The PDF process
+            especially showed me that version control and clear
+            revision steps are just as important as good
+            writing. Without a solid way to track edits,
+            important changes can easily get lost.
           </p>
           <p>
-            Proofreading and rewriting translated content also
-            reinforced how localization is more than
-            word-for-word translation. Maintaining consistent
-            terminology and natural reading flow requires the
-            same kind of intentional structure that good source
-            writing does, and working through those
-            inconsistencies gave me a clearer appreciation for
-            how translation memory systems and style guides
-            function as essential infrastructure for global
+            Proofreading and rewriting translated content showed
+            me that localization is more than just translating
+            words. To keep terminology consistent and the text
+            easy to read, you need the same careful structure as
+            in the original writing. Dealing with these issues
+            helped me see how important translation memory
+            systems and style guides are for global
             documentation teams.
           </p>
           <p>
-            Stepping into a more autonomous role during a period
-            of reduced team capacity also meant taking ownership
-            of decisions that would normally involve more senior
-            input. Working closely with my manager to verify
-            those decisions and then training teammates on the
-            HTML workflow turned an initially difficult
-            situation into a process improvement that benefited
-            the broader team.
+            Taking on a more independent role when our team was
+            short-staffed meant I had to make decisions that
+            usually needed senior approval. By working with my
+            manager to check those choices and then training
+            teammates on the HTML workflow, we turned a tough
+            situation into a process improvement that helped the
+            whole team.
           </p>
         </div>
       </section>

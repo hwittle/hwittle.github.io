@@ -81,21 +81,20 @@ export function PrintedSetupGuide() {
               href="https://files.support.epson.com/docid/cpd6/cpd64764.pdf"
             >
               <strong>PDF</strong>
-            </a>.
+            </a>
+            .
           </p>
           <p>
-            This setup guide was created to provide customers a
-            clear, step-by-step assembly process for a
-            large-format commercial printer. The product manager
-            requested a new formatted guide specifically
-            designed for customers and their teams to
-            self-assemble the printer at industrial sites
-            without requiring Epson-certified installers. The
-            finalized document was designed to be both printable
-            and accessible online, as assemblers may not have
-            convenient access to a computer or phone during
-            setup. Printed versions were packaged with the
-            product and included the warranty.
+            This setup guide gives customers clear, step-by-step
+            instructions for assembling a large-format
+            commercial printer. The product manager asked for a
+            new guide so customers and their teams could put the
+            printer together at industrial sites without needing
+            Epson-certified installers. The final guide can be
+            printed or viewed online, since assemblers might not
+            always have a computer or phone nearby. Printed
+            copies come with the product and include the
+            warranty.
           </p>
         </div>
       </section>
@@ -187,45 +186,43 @@ export function PrintedSetupGuide() {
                 <span className="mr-2">▸</span>
                 <span>
                   The printer sells in the United States and
-                  Canada, requiring the document to be
-                  localizedin both English and French within a
-                  single printable document
+                  Canada, requiring localization in both English
+                  and French within a single printable document.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Print cost had to be carefully managed while
-                  ensuring all textual and visual information
-                  remained clear and legible in black and white
+                  Print cost had to be managed while ensuring
+                  all text and visuals remained clear and
+                  legible in black and white.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Some line art provided by the parent company
-                  overseas did not accurately correlate to the
-                  assembly steps, requiring coordination with
-                  in-house graphic designers to produce new
-                  illustrations for complex steps and
-                  location-specific actions
+                  Some line art from the parent company overseas
+                  did not match the assembly steps, requiring
+                  coordination with in-house graphic designers
+                  to produce new illustrations for complex steps
+                  and location-specific actions.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  A tight timeline was introduced when the
-                  product manager needed a draft ready for a
-                  trade convention where the printer would be
-                  physically assembled and presented to buyers
+                  A tight timeline arose when the product
+                  manager needed a draft ready for a trade
+                  convention where the printer would be
+                  assembled and shown to buyers.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Coordinating with the French localization team
-                  required scheduling around their existing
-                  workload and other document assignments
+                  required scheduling around their workload and
+                  other assignments.
                 </span>
               </li>
             </ul>
@@ -243,7 +240,7 @@ export function PrintedSetupGuide() {
                   large-format printer team, in-house graphic
                   designers, and the French localization team to
                   produce a concise and print-optimized setup
-                  guide
+                  guide.
                 </span>
               </li>
               <li className="flex items-start">
@@ -251,26 +248,25 @@ export function PrintedSetupGuide() {
                 <span>
                   Combined the setup guide and warranty into a
                   single 64-page document to reduce print costs
-                  while keeping all necessary information
-                  accessible in one place
+                  and keep all necessary information together.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Limited line art to steps requiring
+                  Limited line art to steps with
                   location-specific actions or complex assembly,
                   reducing illustration volume while maintaining
-                  visual clarity
+                  clarity.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
                   Wrote English copy with localization in mind,
-                  keeping sentence structure simple and concise
-                  to prevent French translations from
-                  overrunning line lengths or disrupting layout
+                  keeping sentences simple and concise to
+                  prevent French translations from overrunning
+                  line lengths or disrupting layout.
                 </span>
               </li>
               <li className="flex items-start">
@@ -278,15 +274,15 @@ export function PrintedSetupGuide() {
                 <span>
                   Worked with senior writers and the product
                   manager to identify content that could be
-                  condensed without sacrificing clarity
+                  condensed without losing clarity.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">▸</span>
                 <span>
-                  Coordinated timeline with the French localizer
-                  to balance competing document priorities and
-                  meet the convention deadline
+                  Coordinated the timeline with the French
+                  localizer to balance competing priorities and
+                  meet the convention deadline.
                 </span>
               </li>
               <li className="flex items-start">
@@ -294,8 +290,8 @@ export function PrintedSetupGuide() {
                 <span>
                   Communicated with in-house graphic designers
                   to replace inaccurate parent company
-                  illustrations with new line art that precisely
-                  matched each assembly step
+                  illustrations with new line art that matched
+                  each assembly step precisely.
                 </span>
               </li>
             </ul>
@@ -310,34 +306,30 @@ export function PrintedSetupGuide() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            The finalized document totaled 64 pages, a 27-page
-            setup guide and 5-page warranty in both English and
-            French, combining what could have been two separate
-            documents into a single print-optimized package that
-            reduced production costs without sacrificing
-            clarity. This project reinforced the importance of
-            writing with localization in mind from the start
-            rather than treating translation as a final step.
-            Keeping English copy concise and structurally simple
-            directly affected how cleanly the French translation
-            fit within the existing layout, a consideration that
-            shaped every writing decision throughout the
-            document.
+            The final document was 64 pages long, including a
+            27-page setup guide and a 5-page warranty, both in
+            English and French. By combining what could have
+            been two separate documents into one print-friendly
+            package, we lowered production costs without losing
+            clarity. This project showed how important it is to
+            think about localization from the beginning, not
+            just at the end. Keeping the English text short and
+            simple made it easier for the French translation to
+            fit the layout, which influenced every writing
+            choice we made.
           </p>
           <p>
-            Working under a convention deadline also highlighted
-            how early collaboration across teams including
-            product management, graphic design, and localization
-            is essential to keeping a complex document on track.
-            Waiting on any one dependency would have delayed the
-            others, so maintaining open communication throughout
-            was as important as the writing itself. The
-            constraint of designing for print-first,
-            internet-optional access was an interesting
-            challenge that pushed toward clarity over brevity.
-            Every step had to stand on its own without the
-            assumption that a user could easily search for
-            clarification elsewhere.
+            Having a tight deadline made it clear that early
+            teamwork between product management, graphic design,
+            and localization was key to keeping the project
+            moving. If one part was delayed, everything else
+            would have been held up, so staying in touch was
+            just as important as the writing. Designing for
+            print first, with online access as a backup, was a
+            unique challenge that made us focus on being clear
+            rather than just brief. Each step needed to be
+            understandable on its own, since users might not be
+            able to look up extra information.
           </p>
         </div>
       </section>
