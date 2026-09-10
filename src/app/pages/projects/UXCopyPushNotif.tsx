@@ -88,30 +88,34 @@ export function UXCopyPushNotif() {
               href="https://www.figma.com/design/f5ycmpV7eFaxl0rZd8vRdJ/Push-Notification-for-Steam?node-id=1-3733&p=f"
             >
               <strong>Figma</strong>
-            </a>.
+            </a>
+            .
           </p>
           <p>
-            This is a spec project completed as part of the
-            UXcel UX Writing certification. The goal was to
-            demonstrate UX writing skills by crafting push
-            notification copy for a mobile e-commerce platform.
+            This project was carried out as part of the UXcel UX
+            Writing certification, with the aim of showing off
+            your UX writing abilities by writing push
+            notification text for a mobile e-commerce platform.
           </p>
           <p>
-            Steam was selected as the platform of choice, a
-            digital game distribution platform with a distinct
-            and engaged user base. Rather than writing generic
-            e-commerce notifications, this project focused on
-            notifications that reflect Steam's actual mobile app
-            functionality, grounding each copy decision in
-            realistic platform constraints and user scenarios.
+            Steam was chosen as the platform to use, since it is
+            a digital game distribution service with a dedicated
+            and actively involved user base. Instead of
+            producing standard e-commerce notifications, the
+            project concentrated on creating notifications that
+            match the real functionality of Steam's mobile app,
+            ensuring that each decision regarding the copy was
+            based on the actual limitations of the platform and
+            on user situations.
           </p>
           <p>
-            The project covers five push notifications each
-            serving a distinct purpose, designed for both iOS
-            and Android following their respective platform
-            guidelines. Each notification includes a collapsed
-            state for banner delivery and an expanded state
-            where the interaction warrants additional context.
+            The project involves five push notifications, each
+            having a specific purpose, and they have been
+            designed for both iOS and Android in accordance with
+            the guidelines of those respective platforms. Each
+            notification has a collapsed state for use when
+            displaying it as a banner and an expanded state for
+            when interaction requires more context.
           </p>
         </div>
       </section>
@@ -155,33 +159,38 @@ export function UXCopyPushNotif() {
                 </div>
                 <div className="space-y-4 pt-4">
                   <p>
-                    The title uses "your wishlist game" rather
-                    than the specific game title to accommodate
-                    Steam's notification system across all
-                    wishlist items regardless of title length.
-                    Long game titles risk truncation in the
-                    notification title field, so keeping the
-                    title generic ensures the message is always
-                    fully readable at a glance.
+                    The reason the title refers to "your
+                    wishlist game" rather than using the
+                    specific name of the game is so that it will
+                    work with Steam's notification system for
+                    all items on a wishlist regardless of how
+                    long the title is. If the game titles are
+                    very long there is a risk that they will be
+                    cut off in the notification title field,
+                    hence using a general title ensures that the
+                    message is always completely readable at a
+                    glance.
                   </p>
                   <p>
-                    The game title and discount appear in the
-                    body where there is more room, giving the
-                    user the specific details they need to make
-                    a decision. "Sale ends June 25" was chosen
-                    over vague urgency language like "ends soon"
-                    or "limited time." A specific date respects
-                    the user's ability to decide when to act
-                    rather than manufacturing pressure.
+                    The title of the game and the discount are
+                    placed in the main area since there is more
+                    space there, so that users can see the exact
+                    information they need in order to make their
+                    decision. Instead of using general urgency
+                    phrases such as 'ends soon' or 'limited
+                    time', 'Sale ends June 25' was selected
+                    because giving a specific date allows users
+                    to decide when to act rather than creating a
+                    sense of pressure.
                   </p>
                   <p>
-                    The expanded view reveals the game's cover
-                    art, providing immediate visual recognition
-                    of the title on sale without requiring the
-                    user to open the app first. Tapping the
-                    notification takes the user directly to the
-                    game's Steam store page where they can
-                    complete the purchase.
+                    When you view the expanded image you can see
+                    the game's cover art and thus immediately
+                    recognise the title when it's on sale,
+                    without having to open the app first. If you
+                    tap the notification you will be taken
+                    directly to the game's Steam store page from
+                    where the purchase can be made.
                   </p>
                 </div>
               </div>
@@ -212,34 +221,30 @@ export function UXCopyPushNotif() {
                   <p>
                     The Steam Summer Sale is one of the most
                     anticipated events in the PC gaming
-                    community. To reflect Steam's own
-                    communication with the cultural significance
-                    of the sale, the announcement is written in
-                    a more playful tone than their default
-                    functional style. The inclusion of a sun
-                    emoji in the title is a deliberate nod to
-                    that personality while keeping the message
-                    clear and readable.
+                    community. To reflect Steam's communication
+                    and the sale's cultural significance, the
+                    announcement is written in a more playful
+                    tone than their default style. The sun emoji
+                    in the title nods to that personality while
+                    keeping the message clear and readable.
                   </p>
                   <p>
-                    Unlike the other notifications in this set
-                    which announce something that has already
-                    happened, this is a pre-sale announcement.
-                    The title uses "soon" rather than "starts
-                    now" because the sale has not yet begun. The
-                    body delivers the full date range from June
-                    25 to July 9 so users know both when it
-                    starts and when it ends, giving them
+                    Unlike other notifications in this set that
+                    announce something already happened, this is
+                    a pre-sale announcement. The title uses
+                    "soon" rather than "starts now" because the
+                    sale has not begun. The body gives the full
+                    date range from June 25 to July 9 so users
+                    know when it starts and ends, providing
                     concrete information to plan around.
                   </p>
                   <p>
                     No action button is included because the
                     Summer Sale announcement is a general event
-                    notification rather than a prompt for
-                    immediate action. Adding a button would
-                    imply urgency where none is needed and could
-                    feel pushy for an event that runs for two
-                    weeks.
+                    notification, not a prompt for immediate
+                    action. Adding a button would imply urgency
+                    where none is needed and could feel pushy
+                    for an event that runs two weeks.
                   </p>
                 </div>
               </div>
@@ -282,28 +287,31 @@ export function UXCopyPushNotif() {
                 </div>
                 <div className="space-y-4 pt-4">
                   <p>
-                    Steam trading is restricted to established
-                    friends, so using a specific username rather
-                    than a generic "someone" or "a Steam user"
-                    accurately reflects how trading works on the
-                    platform. Seeing a friend's username makes
-                    the notification feel personal and
-                    trustworthy, increasing the likelihood the
-                    user will engage with the offer.
+                    Steam trading is only available to
+                    established friends, which is why it's
+                    appropriate to use a specific username
+                    rather than a general term such as 'someone'
+                    or 'a Steam user' when describing how
+                    trading functions on the site. The fact that
+                    you see your friend's username makes the
+                    notification seem more personal and
+                    trustworthy, thus making it more likely that
+                    the user will respond to the offer.
                   </p>
                   <p>
-                    The body includes the 14 day expiry window
-                    worth communicating so the user can
-                    prioritize reviewing it.
+                    The message should include the fourteen day
+                    expiry period so that the user can decide
+                    which ones to review.
                   </p>
                   <p>
-                    Tapping the notification takes the user
-                    directly to the trade offer review page
-                    where they have full context to accept or
-                    decline. No expanded view is used as trade
-                    offer contents vary widely and would require
-                    dynamic content that is difficult to
-                    represent meaningfully in a static mockup.
+                    When the user taps the notification, they
+                    are taken straight to the page where they
+                    can review the trade offer and choose to
+                    accept or decline it. An expanded view is
+                    not employed since the contents of the trade
+                    offer differ greatly and would need dynamic
+                    content which cannot be shown meaningfully
+                    in a static mockup.
                   </p>
                 </div>
               </div>
@@ -332,31 +340,31 @@ export function UXCopyPushNotif() {
                 <div className="space-y-4 pt-4">
                   <p>
                     The title leads with the most exciting
-                    information, that a gift has arrived, before
+                    information: a gift has arrived, before
                     identifying the sender in the body. This
                     mirrors the natural emotional sequence of
-                    receiving a gift: the excitement of getting
-                    something comes before knowing the details.
+                    receiving a gift, where excitement comes
+                    before knowing the details.
                   </p>
                   <p>
                     CloudStrife7 appears again as the sender,
                     consistent with the Trade Offer
                     notification. Steam gifting requires an
-                    existing friend connection so using a
-                    specific username accurately reflects the
-                    platform's social structure and reinforces
-                    the personal nature of the interaction.
+                    existing friend connection, so using a
+                    specific username reflects the platform's
+                    social structure and reinforces the personal
+                    nature of the interaction.
                   </p>
                   <p>
                     The gift title is deliberately withheld from
                     the notification. Steam gifts include a
-                    personal message from the sender and the
-                    moment of discovering what was sent is part
-                    of the experience. Revealing the game title
-                    in the notification would undercut that
-                    moment before the user even opens the app.
-                    The notification's job is to prompt the
-                    action, not replace it.
+                    personal message from the sender, and
+                    discovering what was sent is part of the
+                    experience. Revealing the game title in the
+                    notification would undercut that moment
+                    before the user opens the app. The
+                    notification's job is to prompt action, not
+                    replace it.
                   </p>
                 </div>
               </div>
@@ -402,29 +410,27 @@ export function UXCopyPushNotif() {
                     the process. "Playtest access granted"
                     communicates the result immediately. The
                     excitement of getting in after applying is
-                    conveyed through the directness of the
-                    confirmation rather than through exclamatory
-                    language.
+                    conveyed through the direct confirmation
+                    rather than exclamatory language.
                   </p>
                   <p>
                     The game title appears in the body following
-                    Steam's actual naming convention for
-                    playtests, where the software is listed as
-                    the game title followed by "Playtest." This
+                    Steam's naming convention for playtests,
+                    where the software is listed as the game
+                    title followed by "Playtest." This
                     immediately tells the user which playtest
-                    they were accepted into, which is important
-                    since users may have applied to multiple
-                    playtests simultaneously.
+                    they were accepted into, important since
+                    users may have applied to multiple playtests
+                    simultaneously.
                   </p>
                   <p>
-                    Urgency language was intentionally avoided.
-                    Steam playtest access does not expire once
-                    granted, so copy like "claim your spot" or
-                    "limited time access" would be inaccurate
-                    and manipulative. The body instead uses
-                    "download" as the action word, which
-                    reflects what the user does next without
-                    creating false pressure.
+                    Urgency language was avoided. Steam playtest
+                    access does not expire once granted, so copy
+                    like "claim your spot" or "limited time
+                    access" would be inaccurate and
+                    manipulative. The body uses "download" as
+                    the action word, reflecting what the user
+                    does next without creating false pressure.
                   </p>
                   <p>
                     The expanded view includes the game's cover
@@ -445,45 +451,50 @@ export function UXCopyPushNotif() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This project reinforced that UX writing is as much
-            about what you leave out as what you include. The
-            most deliberate decisions in this brief were not
-            about finding the right words but about resisting
-            the wrong ones. Withholding the gift title, removing
-            false urgency from the playtest notification, and
-            avoiding a pre-sale call to action that had nothing
-            to deliver yet were all cases where doing less
-            served the user better.
+            The project showed that in UX writing just as much
+            importance is attached to what you omit as to what
+            you include. The most careful decisions made in this
+            project weren't concerned with choosing the correct
+            words but with avoiding inappropriate ones. Examples
+            of this were not including the 'gift' title, getting
+            rid of the false sense of urgency from the playtest
+            notification, and avoiding a pre-sale call to action
+            which offered nothing to deliver, all of which were
+            instances in which doing less proved to be better
+            for the user.
           </p>
           <p>
-            Working within Steam's voice was an interesting
-            constraint because it is not a uniformly playful
-            brand. Steam's default tone is functional and
-            direct, with personality reserved for moments that
-            earn it. Writing within that restraint meant
-            resisting the temptation to add enthusiasm where the
-            platform would not, and leaning into clarity as the
-            primary value instead.
+            The fact that Steam's tone was playful presented an
+            interesting limitation since the brand doesn't have
+            a consistently light and cheerful attitude. Its
+            standard tone is functional and to the point, and
+            its personality is only shown when it has been
+            earned. When writing in this way it was necessary to
+            resist the urge to include any enthusiasm where
+            Steam wouldn't allow it and to treat clarity as the
+            main consideration.
           </p>
           <p>
-            Designing for both iOS and Android within iOS
-            character limits was a practical decision that
-            simplified the writing process without compromising
-            either platform. In a production environment, each
-            platform would warrant individual optimization, and
-            Android's additional character allowance could be
-            used to add context or warmth where the tighter iOS
-            version had to cut.
+            Designing versions for both iOS and Android while
+            staying within the iOS character limit was
+            practical, as it simplified the writing process
+            without compromising either platform. When it came
+            to production, each platform would require separate
+            optimisation. The extra characters available on
+            Android could then be used to include some context
+            or add a warmer tone where the more concise iOS
+            version had to make cuts.
           </p>
           <p>
-            If revisiting this project, exploring how
-            notifications change across different user segments
-            would be an interesting extension. A new Steam user
-            and a long time community member would likely
-            respond differently to the same copy, and
-            personalizing notification language based on user
-            history and behavior is where push notification UX
-            writing gets more complex and more interesting.
+            If I were to return to this project, it would be
+            interesting to investigate how notifications vary
+            among different user groups since a new Steam user
+            and a long-time member of the community would
+            probably react in different ways to the same
+            notification text. It is in personalising the
+            notification language according to a user's history
+            and behaviour that push notification UX writing
+            becomes more complex and interesting.
           </p>
         </div>
       </section>

@@ -82,14 +82,15 @@ export function ContentAuditOptimize() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This is an independent content audit of Hertz's
-            desktop car rental booking flow, conducted to
-            identify content and copy decisions that create
-            unnecessary friction, erode user trust, or obscure
-            information users need to make confident decisions.
-            Reducing that friction supports two outcomes: higher
-            booking completion rates and stronger long term
-            brand trust.
+            In the field of travel e-commerce, car rental
+            companies are characterized by high levels of
+            friction. Customers frequently have to deal with
+            unfamiliar insurance jargon, unclear pricing
+            arrangements, and a number of additional options all
+            while under time pressure. Content that increases
+            this friction by using vague language, manipulative
+            presentation, or inconsistent information damages
+            trust and leads directly to booking abandonment.
           </p>
           <p>
             Car rental platforms are a high friction category in
@@ -102,11 +103,11 @@ export function ContentAuditOptimize() {
             contributes directly to booking abandonment.
           </p>
           <p>
-            This audit covers five key pages within the Hertz
-            desktop booking flow: vehicle selection, protection
-            coverage, protection modal, add-ons, and checkout.
-            Each page is evaluated against the following
-            criteria:
+            The audit focuses on five main pages that are part
+            of the Hertz desktop booking process: vehicle
+            selection, protection coverage, the protection
+            modal, add-ons, and checkout. Each of these pages is
+            assessed using the following criteria:
           </p>
           <ul className="pl-4 space-y-2 leading-relaxed">
             <li className="flex items-start">
@@ -151,8 +152,9 @@ export function ContentAuditOptimize() {
             </li>
           </ul>
           <p>
-            Findings are labeled as Add, Remove, or Update with
-            specific recommendations for each.
+            The findings are classified as Add, Remove, or
+            Update and each case is given specific
+            recommendations.
           </p>
         </div>
       </section>
@@ -896,53 +898,60 @@ export function ContentAuditOptimize() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This audit reinforced that content problems in
-            e-commerce are rarely isolated. What begins as a
-            single piece of vague copy compounds across a
-            multi-step flow until the cumulative effect is a
-            user experience that feels adversarial rather than
-            helpful. The protection page, the modal
-            reappearance, the add-on pressure tactics, and the
-            late pricing disclosure are each problematic on
-            their own, but together they paint a picture of a
-            booking flow optimized for revenue extraction rather
-            than user confidence.
+            This audit has shown that content issues in
+            e-commerce are seldom limited to one instance; a
+            piece of vague copy tends to spread throughout a
+            multi-step process until the overall result is a
+            user experience which seems adversarial rather than
+            helpful. Although the protection page, the modal
+            reappearing, the pressure tactics used to encourage
+            add-ons, and the late disclosure of prices are each
+            problematic in themselves, taken together they give
+            the impression that the booking process has been
+            designed primarily to extract revenue rather than to
+            build user confidence.
           </p>
           <p>
-            The most significant finding was the payment option
-            pricing discrepancy at checkout. Showing one price
-            during vehicle selection and revealing a higher
-            price for a different payment option only at
-            checkout is not a copy problem — it is a structural
-            transparency problem that no amount of improved
-            wording can fully resolve. The fix requires
-            surfacing both options earlier in the journey, which
-            is a product and content strategy decision rather
-            than a microcopy edit.
+            The key discovery was the discrepancy in the pricing
+            of the payment options when checking out. The fact
+            that a single price is displayed during the stage of
+            selecting a vehicle but a higher price is shown only
+            at checkout for a different payment option is not
+            merely a problem with the wording. It is a
+            fundamental issue relating to transparency in the
+            product's structure, something that no amount of
+            better wording will be able to overcome. The
+            solution involves showing both options earlier in
+            the process, and this is a decision that pertains to
+            product and content strategy rather than a small
+            adjustment to the microcopy.
           </p>
           <p>
-            Auditing a real platform rather than a fictional one
-            made the findings more credible and the
-            recommendations more grounded. Every finding is tied
-            to something a real user would encounter, which
-            forced a level of specificity that a hypothetical
-            audit would not require. It also surfaced the
-            tension between business incentives and user trust —
-            Hertz's copy choices are not accidental. They
-            reflect deliberate decisions about how to present
-            information in ways that favor conversion. A content
-            audit's value is in making those choices visible and
-            arguing for alternatives that serve both the user
-            and the business more sustainably.
+            Carrying out the audit on an actual platform rather
+            than a fictitious one made the results more credible
+            and the suggestions more reliable. Since each
+            finding is based on something that a real user
+            actually experiences, this demanded a greater degree
+            of specificity than a hypothetical audit would.
+            Moreover, it highlighted the conflict between
+            business incentives and user trust. Hertz's
+            selection of copy is not random; it shows deliberate
+            choices regarding how to present the information in
+            a way that promotes conversion. The value of a
+            content audit lies in making these choices visible
+            and in advocating for alternatives that benefit both
+            the user and the business in a more sustainable
+            manner.
           </p>
           <p>
-            If revisiting this project, conducting the same
-            audit on the mobile app version of the booking flow
-            would be a natural extension. Many of the friction
-            points identified here would be amplified on a
-            smaller screen where cognitive load is already
-            higher and users have less patience for persuasive
-            tactics that slow them down.
+            If I ever return to this project, it would be only
+            natural to carry out the same audit on the mobile
+            app version of the booking process, since a number
+            of the friction points identified here would be even
+            more pronounced on a smaller screen where the
+            cognitive load is already greater and users have
+            less tolerance for persuasive techniques that delay
+            them.
           </p>
         </div>
       </section>

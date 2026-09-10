@@ -13,7 +13,7 @@ export function Home() {
           <div className="flex items-center justify-center gap-4">
             <div className="hidden md:block border-t-2 border-foreground w-16"></div>
             <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Vol. V · Issue 001 · August 2026
+              Vol. V · Issue 002 · September 2026
             </div>
             <div className="hidden md:block border-t-2 border-foreground w-16"></div>
           </div>

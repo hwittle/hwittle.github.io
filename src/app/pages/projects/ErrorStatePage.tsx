@@ -77,40 +77,43 @@ export function ErrorStatePage() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This is a spec project completed as part of the
-            UXcel UX Writing certification. The brief called for
-            designing a 404 error page for a finance platform
-            that balances professionalism with friendliness.
+            This project was carried out as part of the UXcel UX
+            Writing certification programme, the brief having
+            required the design of a 404 error page for a
+            finance platform that achieves a balance between
+            professionalism and friendliness.
           </p>
           <p>
-            Chime was selected as the platform of choice. As a
-            fintech company positioned against traditional
-            banking, Chime's brand voice is conversational,
-            empowering, and approachable. These qualities are
-            rarely associated with finance but are central to
-            Chime's identity. Their existing 404 page features a
-            friendly message and a sad frog mascot, confirming
-            that Chime embraces personality even in error
-            moments.
+            Chime was chosen as the platform that was preferred.
+            Since it is a fintech company operating in
+            opposition to traditional banking, Chime has a brand
+            voice which is conversational, empowering and
+            accessible. Such characteristics are generally not
+            linked with the field of finance yet they are at the
+            heart of Chime's identity. The company's current 404
+            page includes a friendly message together with a sad
+            frog character, which shows that Chime maintains a
+            personal touch even in error situations.
           </p>
           <p>
-            Rather than designing a traditional 404 page, this
-            project focuses on a connectivity error state more
-            realistic to Chime's native mobile app context. In a
-            native mobile app, users cannot manually enter or
-            manipulate URLs, making a traditional 404 scenario
-            unlikely. A connectivity error is the more authentic
-            and high stakes error a Chime user would encounter,
-            particularly mid-transaction when the emotional
-            weight of losing connection to a finance app is at
-            its highest.
+            Instead of creating a conventional 404 page, this
+            project addresses a connectivity error scenario that
+            is more relevant to the context of Chime's native
+            mobile app. In a native mobile app, users have no
+            means of manually entering or altering URLs, so a
+            traditional 404 situation is unlikely to occur. A
+            connectivity error is in fact the more genuine and
+            serious error a Chime user would experience,
+            especially during a transaction when the emotional
+            impact of losing connection with a finance app is at
+            its peak.
           </p>
           <p>
-            The project includes both a mobile and desktop
-            version of the error state, grounded in Chime's
-            established brand voice and designed to reassure
-            users without making promises the app cannot keep
-            about transaction status.
+            The project features both a mobile and a desktop
+            version of the error message, aligning with Chime's
+            existing brand voice and aimed at reassuring users
+            without making any assurances about transaction
+            status that the app cannot fulfil.
           </p>
         </div>
       </section>
@@ -136,88 +139,94 @@ export function ErrorStatePage() {
                   Traditional 404
                 </h3>
                 <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  A traditional 404 error occurs when a user
-                  navigates to a page that does not exist. In a
-                  native mobile app like Chime, users cannot
-                  manually enter or manipulate URLs, making this
-                  scenario unlikely in practice. A connectivity
+                  A 404 error is traditional and arises when a
+                  user goes to a page that does not exist. In a
+                  native mobile application such as Chime, users
+                  are not able to enter or alter URLs
+                  themselves, so this situation is unlikely to
+                  occur in reality. Instead, a connectivity
                   error is the more realistic and emotionally
-                  significant error a Chime user would
-                  encounter, particularly when attempting to
-                  check a balance, send money, or complete a
+                  impactful error that a Chime user would come
+                  across, especially when trying to check their
+                  balance, send money, or carry out a
                   transaction.
                 </p>
                 <h3 className="pt-2">Headline</h3>
                 <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  "Looks like you're offline" was chosen over
-                  more alarming alternatives like "No connection
-                  detected" or technical language like "Network
-                  error." The conversational phrasing mirrors
-                  Chime's established voice and immediately
-                  communicates the problem without escalating
-                  the user's anxiety. It acknowledges the
-                  situation matter-of-factly, the same way a
-                  trusted friend would tell you your phone lost
-                  signal rather than delivering a formal error
-                  report.
+                  The message "Looks like you're offline" was
+                  selected instead of more alarming options such
+                  as "No connection detected" or technical terms
+                  like "Network error". By using conversational
+                  language, it stays in keeping with Chime's
+                  usual tone and clearly explains the issue
+                  without increasing the user's anxiety. It
+                  states the situation plainly, just as a
+                  reliable friend would tell you that your phone
+                  had lost its signal rather than giving you a
+                  formal error message.
                 </p>
                 <h3 className="pt-2">Body Copy</h3>
                 <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The body copy addresses three progressive
-                  recovery steps without overwhelming the user.
-                  "Check your connection and try again" is the
-                  first and simplest action. "Still no luck?"
-                  acknowledges the frustration of repeated
-                  failure in Chime's characteristically
-                  conversational tone before offering a
-                  fallback. "Close the app and come back once
-                  you have a signal" gives a concrete
-                  alternative without requiring the user to
-                  navigate elsewhere. The final sentence "Your
-                  transactions will show you exactly where
-                  things stand" reassures the user without
-                  making promises the app cannot keep about
-                  whether an in-progress action was completed.
+                  The body copy outlines three successive
+                  recovery steps without confusing the user. The
+                  first and most straightforward option is to
+                  "Check your connection and try again". When
+                  asked "Still no luck?", the message admits the
+                  user's frustration in its typical
+                  conversational style before providing an
+                  alternative solution. Instead of asking the
+                  user to go elsewhere, the suggestion "Close
+                  the app and come back once you have a signal"
+                  offers a specific alternative. The last
+                  sentence, "Your transactions will show you
+                  exactly where things stand", comforts the user
+                  without making any promises about whether an
+                  ongoing action has been completed that the app
+                  cannot keep.
                 </p>
                 <h3 className="pt-2">
                   Single CTA (Call-to-Action)
                 </h3>
                 <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  "Try Again" is the only action on the screen.
-                  In a connectivity error scenario, the user's
-                  primary goal is to restore their session and
-                  continue what they were doing. A single
-                  focused CTA reduces cognitive load during an
-                  already frustrating moment. Secondary
-                  navigation options were deliberately omitted
-                  since they would require an active connection
-                  to be useful anyway, and presenting them
-                  alongside a connectivity error would create
-                  false affordance.
+                  The only option available on the screen is
+                  "Try Again". When there is a connectivity
+                  error, the user's main aim is to get their
+                  session back and carry on with what they were
+                  doing. By having a single, clear call to
+                  action, cognitive load is reduced at a time
+                  when things are already frustrating. The other
+                  navigation options have been deliberately left
+                  out since they would need an active connection
+                  in order to be of any use, and including them
+                  together with a connectivity error would
+                  create a false sense of possibility.
                 </p>
                 <h3 className="pt-2">Illustration</h3>
                 <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The frog illustration references Chime's 404
-                  mascot while adapting it to a different error
-                  context. Including the mascot to the
-                  connectivity error page maintains the warmth
-                  and humor Chime brings to error states. It
-                  signals to the user that this is a minor
-                  inconvenience rather than a serious problem.
+                  The illustration of the frog refers to Chime's
+                  404 mascot but adapts it to a different error
+                  situation. By including the mascot on the
+                  connectivity error page, the warmth and humour
+                  that Chime provides in error situations is
+                  retained. This tells the user that they are
+                  experiencing only a minor inconvenience rather
+                  than a serious problem.
                 </p>
                 <h3 className="pt-2">
                   Mobile and Desktop Versions
                 </h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The copy is identical across both platforms
-                  since the error scenario and recovery steps
-                  are the same regardless of device. The layout
-                  adapts to each platform: mobile uses a stacked
-                  single column layout optimized for thumb
-                  navigation with the illustration above the
-                  copy, while desktop presents the illustration
-                  and copy side by side with a larger frog given
-                  the increased screen real estate.
+                <p className="pb-4">
+                  The copy is the same on both platforms since
+                  the error situation and the steps for recovery
+                  are identical no matter what device is used;
+                  the layout, however, is adapted for each
+                  platform, with the mobile version employing a
+                  single-column stacked layout optimised for
+                  thumb navigation and having the illustration
+                  above the copy, and the desktop version
+                  displaying the illustration and the copy side
+                  by side while using a larger frog because of
+                  the greater amount of screen space.
                 </p>
               </div>
             </div>
@@ -232,48 +241,52 @@ export function ErrorStatePage() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This project reinforced that error states in finance
-            apps carry more emotional weight than error states
-            in most other contexts. A lost connection on a
-            social media app is an inconvenience. A lost
-            connection mid-transaction on a finance app raises
-            immediate questions about money, security, and
-            whether an action was completed. Writing copy that
-            addresses that anxiety without amplifying it
-            required a deliberate restraint.
+            The project showed that errors in finance
+            applications have a greater emotional impact than
+            errors in most other kinds of context. While a lost
+            connection on a social media app is just an
+            inconvenience, a lost connection during a
+            transaction on a finance app leads immediately to
+            concerns regarding money, security, and whether the
+            action has actually been completed. To write the
+            copy in a way that dealt with that anxiety without
+            making it worse demanded a clear sense of
+            self-restraint.
           </p>
           <p>
-            Choosing Chime as the platform was interesting
-            because their brand voice actively works against the
-            instinct to be overly formal in a financial context.
-            Their existing 404 page confirmed that personality
-            and warmth belong even in error moments, but
-            extending that voice to a higher stakes scenario
-            required calibrating how much playfulness was
-            appropriate. "Still no luck?" carries Chime's
-            conversational tone without trivializing a moment
-            that might feel stressful to the user.
+            It was interesting to choose Chime as our platform
+            since their brand personality deliberately counters
+            the tendency to be excessively formal in a financial
+            situation. The 404 page they currently have shows
+            that warmth and a friendly tone should be present
+            even in an error scenario, but when applying that
+            same tone to a more serious situation it was
+            necessary to work out how much playfulness was
+            suitable. The phrase "Still no luck?" reflects
+            Chime's conversational style without downplaying a
+            moment which could be stressful for the user.
           </p>
           <p>
-            The decision to design a connectivity error state
-            rather than a traditional 404 page came from
-            thinking about how users actually interact with a
-            native mobile app. That constraint produced a more
-            realistic and useful design than following the
-            brief's literal prompt would have. In a production
-            environment, advocating for the most realistic user
+            The choice to create a connectivity error state
+            rather than a conventional 404 page was based on
+            consideration of the way users really use a native
+            mobile app. This approach resulted in a more
+            realistic and useful design compared to what would
+            have been achieved by taking the brief at face
+            value. When working in a live environment, it is
+            precisely by advocating for the most realistic user
             scenario rather than the most convenient design
-            assumption is part of what makes UX writing valuable
-            beyond just the words themselves.
+            assumption that UX writing proves its value beyond
+            simply providing the right words.
           </p>
           <p>
-            If revisiting this project, exploring additional
-            error states specific to finance such as a failed
-            payment or an authentication error would be a
-            natural extension. Each carries its own emotional
-            context and copy requirements that would further
-            demonstrate how Chime's voice adapts across
-            different moments of friction.
+            If one were to return to this project, then looking
+            into other error states particular to the finance
+            area, such as a failed payment or an authentication
+            error, would be a natural next step; each of these
+            has its own emotional connotation and copy
+            requirements and thus would show how Chime's voice
+            adjusts throughout various moments of friction.
           </p>
         </div>
       </section>
