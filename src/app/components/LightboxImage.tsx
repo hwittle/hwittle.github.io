@@ -27,7 +27,7 @@ export function LightboxImage({ src, alt, className }: LightboxImageProps) {
       <img
         src={src}
         alt={alt}
-        className={clsx("cursor-zoom-in", className)}
+        className={clsx("cursor-zoom-in hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all", className)}
         onClick={() => setOpen(true)}
       />
 

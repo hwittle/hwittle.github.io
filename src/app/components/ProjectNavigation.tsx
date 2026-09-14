@@ -17,7 +17,7 @@ export function ProjectNavigation({ currentSlug }: ProjectNavigationProps) {
       {prev && (
         <Link
           to={`/projects/${prev.slug}`}
-          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors"
+          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
         >
           ← Previous Project
         </Link>
@@ -25,7 +25,7 @@ export function ProjectNavigation({ currentSlug }: ProjectNavigationProps) {
       {next && (
         <Link
           to={`/projects/${next.slug}`}
-          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors"
+          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
         >
           Next Project →
         </Link>

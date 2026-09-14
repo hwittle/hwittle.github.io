@@ -3,11 +3,11 @@ import { ProjectNavigation } from "../../components/ProjectNavigation";
 import { projects } from "../../data/projects";
 
 import { LightboxImage } from "../../components/LightboxImage";
-import WishlistImage from "../../images/wishlist-1x1.png";
-import SummerImage from "../../images/summer-sale-1x1.png";
-import TradeImage from "../../images/trade-offer-1x1.png";
-import GiftImage from "../../images/gift-received-1x1.png";
-import PlaytestImage from "../../images/playtest-1x1.png";
+import WishlistImage from "../../images/wishlist-4x3.png";
+import SummerImage from "../../images/summer-sale-4x3.png";
+import TradeImage from "../../images/trade-offer-4x3.png";
+import GiftImage from "../../images/gift-received-4x3.png";
+import PlaytestImage from "../../images/playtest-4x3.png";
 
 export function UXCopyPushNotif() {
   const navigate = useNavigate();
@@ -92,30 +92,16 @@ export function UXCopyPushNotif() {
             .
           </p>
           <p>
-            This project was carried out as part of the UXcel UX
-            Writing certification, with the aim of showing off
-            your UX writing abilities by writing push
-            notification text for a mobile e-commerce platform.
-          </p>
-          <p>
-            Steam was chosen as the platform to use, since it is
-            a digital game distribution service with a dedicated
-            and actively involved user base. Instead of
-            producing standard e-commerce notifications, the
-            project concentrated on creating notifications that
-            match the real functionality of Steam's mobile app,
-            ensuring that each decision regarding the copy was
-            based on the actual limitations of the platform and
-            on user situations.
-          </p>
-          <p>
-            The project involves five push notifications, each
-            having a specific purpose, and they have been
-            designed for both iOS and Android in accordance with
-            the guidelines of those respective platforms. Each
-            notification has a collapsed state for use when
-            displaying it as a banner and an expanded state for
-            when interaction requires more context.
+            This project was completed as part of the Uxcel UX
+            Writing certification, creating push notification
+            copy for a mobile e-commerce platform. I chose
+            Steam, a digital game storefront with a highly
+            engaged user base, and based each notification on
+            Steam's actual app functionality and platform
+            constraints instead of generic e-commerce patterns.
+            The set includes five notifications, each designed
+            for both iOS and Android with a collapsed banner
+            state and an expanded state for added context.
           </p>
         </div>
       </section>
@@ -135,7 +121,7 @@ export function UXCopyPushNotif() {
               <div className="order-1">
                 <LightboxImage
                   src={WishlistImage}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Mock design of two iPhones with Steam Wishlist notification in Collapsed and Expanded forms."
                   className="border-2 p-6"
                 />
               </div>
@@ -158,40 +144,40 @@ export function UXCopyPushNotif() {
                   </p>
                 </div>
                 <div className="space-y-4 pt-4">
-                  <p>
-                    The reason the title refers to "your
-                    wishlist game" rather than using the
-                    specific name of the game is so that it will
-                    work with Steam's notification system for
-                    all items on a wishlist regardless of how
-                    long the title is. If the game titles are
-                    very long there is a risk that they will be
-                    cut off in the notification title field,
-                    hence using a general title ensures that the
-                    message is always completely readable at a
-                    glance.
-                  </p>
-                  <p>
-                    The title of the game and the discount are
-                    placed in the main area since there is more
-                    space there, so that users can see the exact
-                    information they need in order to make their
-                    decision. Instead of using general urgency
-                    phrases such as 'ends soon' or 'limited
-                    time', 'Sale ends June 25' was selected
-                    because giving a specific date allows users
-                    to decide when to act rather than creating a
-                    sense of pressure.
-                  </p>
-                  <p>
-                    When you view the expanded image you can see
-                    the game's cover art and thus immediately
-                    recognise the title when it's on sale,
-                    without having to open the app first. If you
-                    tap the notification you will be taken
-                    directly to the game's Steam store page from
-                    where the purchase can be made.
-                  </p>
+                  <ul className="space-y-2 leading-relaxed">
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        "Your wishlist game" replaces specific
+                        titles to prevent long names from
+                        truncating in the notification field
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Game title and discount lead the body
+                        copy, giving users what they need to
+                        decide at a glance
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Specific date ("Sale ends June 25")
+                        replaces vague urgency ("ends soon"),
+                        respecting user autonomy over pressure
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Expanded view shows cover art for
+                        instant recognition without opening the
+                        app
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -216,48 +202,49 @@ export function UXCopyPushNotif() {
                     games to your wishlist now so you're ready!"
                   </p>
                 </div>
-
                 <div className="space-y-4 pt-4">
-                  <p>
-                    The Steam Summer Sale is one of the most
-                    anticipated events in the PC gaming
-                    community. To reflect Steam's communication
-                    and the sale's cultural significance, the
-                    announcement is written in a more playful
-                    tone than their default style. The sun emoji
-                    in the title nods to that personality while
-                    keeping the message clear and readable.
-                  </p>
-                  <p>
-                    Unlike other notifications in this set that
-                    announce something already happened, this is
-                    a pre-sale announcement. The title uses
-                    "soon" rather than "starts now" because the
-                    sale has not begun. The body gives the full
-                    date range from June 25 to July 9 so users
-                    know when it starts and ends, providing
-                    concrete information to plan around.
-                  </p>
-                  <p>
-                    No action button is included because the
-                    Summer Sale announcement is a general event
-                    notification, not a prompt for immediate
-                    action. Adding a button would imply urgency
-                    where none is needed and could feel pushy
-                    for an event that runs two weeks.
-                  </p>
+                  <ul className="space-y-2 leading-relaxed">
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Playful tone (☀️ emoji) reflects the
+                        Sale's cultural significance within the
+                        community and breaks from Steam's usual
+                        functional voice
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        "Soon" replaces "starts now" since the
+                        sale hasn't begun; the full date range
+                        gives users something concrete to plan
+                        around
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        No action button is included because
+                        this is a heads-up, not a prompt; adding
+                        one would create false urgency for a
+                        two-week event
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
               {/* Right column - Image */}
               <div className="md:order-2 order-1">
                 <LightboxImage
                   src={SummerImage}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Mock design of an iPhone with a Steam Summer Sale notification."
                   className="border-2 p-6"
                 />
               </div>
             </div>
           </div>
+
           <div className="border-2 border-foreground bg-card p-6">
             <h3 className="font-bold mb-3 uppercase">
               Notification 3 - Trade Offer
@@ -267,11 +254,10 @@ export function UXCopyPushNotif() {
               <div className="order-1">
                 <LightboxImage
                   src={TradeImage}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Mock design of an iPhone with a Steam Trade Offer notification."
                   className="border-2 p-6"
                 />
               </div>
-
               {/* Right column - Bullets */}
               <div className="order-2 space-y-2 leading-relaxed">
                 <div className="border-b-2 border-dashed border-foreground/30 pb-4">
@@ -286,33 +272,33 @@ export function UXCopyPushNotif() {
                   </p>
                 </div>
                 <div className="space-y-4 pt-4">
-                  <p>
-                    Steam trading is only available to
-                    established friends, which is why it's
-                    appropriate to use a specific username
-                    rather than a general term such as 'someone'
-                    or 'a Steam user' when describing how
-                    trading functions on the site. The fact that
-                    you see your friend's username makes the
-                    notification seem more personal and
-                    trustworthy, thus making it more likely that
-                    the user will respond to the offer.
-                  </p>
-                  <p>
-                    The message should include the fourteen day
-                    expiry period so that the user can decide
-                    which ones to review.
-                  </p>
-                  <p>
-                    When the user taps the notification, they
-                    are taken straight to the page where they
-                    can review the trade offer and choose to
-                    accept or decline it. An expanded view is
-                    not employed since the contents of the trade
-                    offer differ greatly and would need dynamic
-                    content which cannot be shown meaningfully
-                    in a static mockup.
-                  </p>
+                  <ul className="space-y-2 leading-relaxed">
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Specific username ("CloudStrife7")
+                        replaces generic terms since trading
+                        happens only between established
+                        friends, building trust and personal
+                        relevance
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Includes 14-day expiry so users can
+                        prioritize which offers to review first
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        No expanded view, trade contents vary
+                        too much to represent meaningfully in a
+                        static mockup
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -323,7 +309,6 @@ export function UXCopyPushNotif() {
               Notification 4 - Gift Received
             </h3>
             {/* Left column - Bullets */}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               <div className="md:order-1 order-2 space-y-2 leading-relaxed">
                 <div className="border-b-2 border-dashed border-foreground/30 pb-4">
@@ -338,41 +323,41 @@ export function UXCopyPushNotif() {
                   </p>
                 </div>
                 <div className="space-y-4 pt-4">
-                  <p>
-                    The title leads with the most exciting
-                    information: a gift has arrived, before
-                    identifying the sender in the body. This
-                    mirrors the natural emotional sequence of
-                    receiving a gift, where excitement comes
-                    before knowing the details.
-                  </p>
-                  <p>
-                    CloudStrife7 appears again as the sender,
-                    consistent with the Trade Offer
-                    notification. Steam gifting requires an
-                    existing friend connection, so using a
-                    specific username reflects the platform's
-                    social structure and reinforces the personal
-                    nature of the interaction.
-                  </p>
-                  <p>
-                    The gift title is deliberately withheld from
-                    the notification. Steam gifts include a
-                    personal message from the sender, and
-                    discovering what was sent is part of the
-                    experience. Revealing the game title in the
-                    notification would undercut that moment
-                    before the user opens the app. The
-                    notification's job is to prompt action, not
-                    replace it.
-                  </p>
+                  <ul className="space-y-2 leading-relaxed">
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Title leads with the emotional beat (a
+                        gift arrived) before the sender,
+                        mirroring how people naturally react to
+                        gifts
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Same username convention as Trade Offer,
+                        consistent with Steam's friend-based
+                        social structure
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Gift title is intentionally withheld
+                        because revealing it in the notification
+                        would spoil the moment of opening it
+                        in-app
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
               {/* Right column - Image */}
               <div className="md:order-2 order-1">
                 <LightboxImage
                   src={GiftImage}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Mock design of an iPhone with a Steam Gift Received notification."
                   className="border-2 p-6"
                 />
               </div>
@@ -387,7 +372,7 @@ export function UXCopyPushNotif() {
               <div className="order-1">
                 <LightboxImage
                   src={PlaytestImage}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Mock design of two iPhones with Steam Playtest Accepted notification in Collapsed and Expanded forms."
                   className="border-2 p-6"
                 />
               </div>
@@ -405,38 +390,33 @@ export function UXCopyPushNotif() {
                   </p>
                 </div>
                 <div className="space-y-4 pt-4">
-                  <p>
-                    The title leads with the outcome rather than
-                    the process. "Playtest access granted"
-                    communicates the result immediately. The
-                    excitement of getting in after applying is
-                    conveyed through the direct confirmation
-                    rather than exclamatory language.
-                  </p>
-                  <p>
-                    The game title appears in the body following
-                    Steam's naming convention for playtests,
-                    where the software is listed as the game
-                    title followed by "Playtest." This
-                    immediately tells the user which playtest
-                    they were accepted into, important since
-                    users may have applied to multiple playtests
-                    simultaneously.
-                  </p>
-                  <p>
-                    Urgency language was avoided. Steam playtest
-                    access does not expire once granted, so copy
-                    like "claim your spot" or "limited time
-                    access" would be inaccurate and
-                    manipulative. The body uses "download" as
-                    the action word, reflecting what the user
-                    does next without creating false pressure.
-                  </p>
-                  <p>
-                    The expanded view includes the game's cover
-                    art, helping the user immediately identify
-                    the game visually.
-                  </p>
+                  <ul className="space-y-2 leading-relaxed">
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Leads with outcome ("Playtest access
+                        granted") rather than process,
+                        confirming the result immediately
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        Game title follows Steam's own playtest
+                        naming convention, important since users
+                        may apply to multiple playtests at once
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2">▸</span>
+                      <span>
+                        No urgency language is used since
+                        playtest access doesn't expire; "claim
+                        your spot" would be inaccurate and
+                        manipulative
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

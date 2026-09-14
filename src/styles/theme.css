@@ -170,6 +170,10 @@
     font-family: "Special Elite", "Courier New", monospace;
   }
 
+  p, li {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
   label {
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
@@ -186,6 +190,14 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  .font-typewriter {
+    font-family: "Courier Prime", "Courier New", monospace;
+  }
+
+  .font-georgia {
+    font-family: Georgia, "Times New Roman", serif;
   }
 
   .content-link {

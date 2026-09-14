@@ -13,7 +13,7 @@ export function Home() {
           <div className="flex items-center justify-center gap-4">
             <div className="hidden md:block border-t-2 border-foreground w-16"></div>
             <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Vol. V · Issue 002 · September 2026
+              Vol. V · Issue 003 · September 2026
             </div>
             <div className="hidden md:block border-t-2 border-foreground w-16"></div>
           </div>
@@ -164,8 +164,9 @@ export function Home() {
                 )}
                 <div className="grid gap-8 md:gap-12">
                   {groupProjects.map((project) => (
-                    <article
+                    <Link
                       key={project.slug}
+                      to={`/projects/${project.slug}`}
                       className="border-2 border-foreground bg-card p-6 md:p-8 hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
                     >
                       <div className="grid md:grid-cols-[1fr_2fr] gap-6">
@@ -203,17 +204,9 @@ export function Home() {
                           <p className="leading-relaxed mb-6">
                             {project.description}
                           </p>
-                          <div className="flex gap-4">
-                            <Link
-                              to={`/projects/${project.slug}`}
-                              className="px-6 py-2 border-2 border-foreground uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors"
-                            >
-                              View Project
-                            </Link>
-                          </div>
                         </div>
                       </div>
-                    </article>
+                    </Link>
                   ))}
                 </div>
               </div>

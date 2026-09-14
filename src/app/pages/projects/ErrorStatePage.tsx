@@ -77,43 +77,18 @@ export function ErrorStatePage() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            This project was carried out as part of the UXcel UX
-            Writing certification programme, the brief having
-            required the design of a 404 error page for a
-            finance platform that achieves a balance between
-            professionalism and friendliness.
-          </p>
-          <p>
-            Chime was chosen as the platform that was preferred.
-            Since it is a fintech company operating in
-            opposition to traditional banking, Chime has a brand
-            voice which is conversational, empowering and
-            accessible. Such characteristics are generally not
-            linked with the field of finance yet they are at the
-            heart of Chime's identity. The company's current 404
-            page includes a friendly message together with a sad
-            frog character, which shows that Chime maintains a
-            personal touch even in error situations.
-          </p>
-          <p>
-            Instead of creating a conventional 404 page, this
-            project addresses a connectivity error scenario that
-            is more relevant to the context of Chime's native
-            mobile app. In a native mobile app, users have no
-            means of manually entering or altering URLs, so a
-            traditional 404 situation is unlikely to occur. A
-            connectivity error is in fact the more genuine and
-            serious error a Chime user would experience,
-            especially during a transaction when the emotional
-            impact of losing connection with a finance app is at
-            its peak.
-          </p>
-          <p>
-            The project features both a mobile and a desktop
-            version of the error message, aligning with Chime's
-            existing brand voice and aimed at reassuring users
-            without making any assurances about transaction
-            status that the app cannot fulfil.
+            This project was completed as part of the Uxcel UX
+            Writing certification, designing a 404 error page
+            for a finance platform. I chose Chime, whose
+            conversational, empowering brand voice stands out in
+            an industry that leans formal. Instead of a
+            traditional 404, unlikely in a native app where
+            users can't alter URLs, I designed for a
+            connectivity error. This is a more realistic and
+            emotionally charged failure point for a finance app,
+            especially mid-transaction. The project includes
+            both mobile and desktop versions, matching Chime's
+            existing tone.
           </p>
         </div>
       </section>
@@ -128,106 +103,110 @@ export function ErrorStatePage() {
             <div className="order-1">
               <LightboxImage
                 src={ErrorImage}
-                alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                alt="Mobile and desktop mockup of Chime's connectivity error screen with 'Looks like you're offline' message and frog illustration."
                 className="border-2 p-6"
               />
             </div>
-            <div className="order-2 space-y-2 leading-relaxed">
+            <div className="order-2 grid md:grid-cols-2 md:gap-6 space-y-2 leading-relaxed">
               <div className="space-y-2">
                 <h3 className="pt-6">
                   Choosing a Connectivity Error Over a
                   Traditional 404
                 </h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  A 404 error is traditional and arises when a
-                  user goes to a page that does not exist. In a
-                  native mobile application such as Chime, users
-                  are not able to enter or alter URLs
-                  themselves, so this situation is unlikely to
-                  occur in reality. Instead, a connectivity
-                  error is the more realistic and emotionally
-                  impactful error that a Chime user would come
-                  across, especially when trying to check their
-                  balance, send money, or carry out a
-                  transaction.
-                </p>
-                <h3 className="pt-2">Headline</h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The message "Looks like you're offline" was
-                  selected instead of more alarming options such
-                  as "No connection detected" or technical terms
-                  like "Network error". By using conversational
-                  language, it stays in keeping with Chime's
-                  usual tone and clearly explains the issue
-                  without increasing the user's anxiety. It
-                  states the situation plainly, just as a
-                  reliable friend would tell you that your phone
-                  had lost its signal rather than giving you a
-                  formal error message.
-                </p>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Native apps don't let users manually enter or change URLs, making a 404 unlikely.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+A connectivity error is a more realistic, higher-stakes failure. Losing connection mid-transaction causes real anxiety about money and security.                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h3 className="pt-6">Headline</h3>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      "Looks like you're offline" replaces alarming alternatives like "No connection detected" or technical terms like "Network error".
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Conversational phrasing matches Chime's tone and explains the issue plainly without raising user anxiety.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border-t-2 border-dashed border-foreground/30 space-y-2 pr-2">
                 <h3 className="pt-2">Body Copy</h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The body copy outlines three successive
-                  recovery steps without confusing the user. The
-                  first and most straightforward option is to
-                  "Check your connection and try again". When
-                  asked "Still no luck?", the message admits the
-                  user's frustration in its typical
-                  conversational style before providing an
-                  alternative solution. Instead of asking the
-                  user to go elsewhere, the suggestion "Close
-                  the app and come back once you have a signal"
-                  offers a specific alternative. The last
-                  sentence, "Your transactions will show you
-                  exactly where things stand", comforts the user
-                  without making any promises about whether an
-                  ongoing action has been completed that the app
-                  cannot keep.
-                </p>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+Three sequential recovery steps: check connection. "Still no luck?" acknowledges frustration before offering the next step. Then "close the app and come back" provides a concrete alternative.                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+Closing line ("Your transactions will show you exactly where things stand") reassures without promising a transaction outcome the app can't guarantee.                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border-t-2 border-dashed border-foreground/30 space-y-2">
                 <h3 className="pt-2">
                   Single CTA (Call-to-Action)
                 </h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The only option available on the screen is
-                  "Try Again". When there is a connectivity
-                  error, the user's main aim is to get their
-                  session back and carry on with what they were
-                  doing. By having a single, clear call to
-                  action, cognitive load is reduced at a time
-                  when things are already frustrating. The other
-                  navigation options have been deliberately left
-                  out since they would need an active connection
-                  in order to be of any use, and including them
-                  together with a connectivity error would
-                  create a false sense of possibility.
-                </p>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Only one action, "Try Again", reduces cognitive load during an already frustrating moment
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Other navigation was deliberately omitted because it requires a connection to function. Including it would create a false sense of options.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border-t-2 border-dashed border-foreground/30 space-y-2 pr-2">
                 <h3 className="pt-2">Illustration</h3>
-                <p className="border-b-2 border-dashed border-foreground/30 pb-4">
-                  The illustration of the frog refers to Chime's
-                  404 mascot but adapts it to a different error
-                  situation. By including the mascot on the
-                  connectivity error page, the warmth and humour
-                  that Chime provides in error situations is
-                  retained. This tells the user that they are
-                  experiencing only a minor inconvenience rather
-                  than a serious problem.
-                </p>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Reuses Chime's existing 404 frog mascot in a new error context, preserving brand warmth and signaling a "minor inconvenience," not a serious problem.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border-t-2 border-dashed border-foreground/30 space-y-2">
                 <h3 className="pt-2">
                   Mobile and Desktop Versions
                 </h3>
-                <p className="pb-4">
-                  The copy is the same on both platforms since
-                  the error situation and the steps for recovery
-                  are identical no matter what device is used;
-                  the layout, however, is adapted for each
-                  platform, with the mobile version employing a
-                  single-column stacked layout optimised for
-                  thumb navigation and having the illustration
-                  above the copy, and the desktop version
-                  displaying the illustration and the copy side
-                  by side while using a larger frog because of
-                  the greater amount of screen space.
-                </p>
+                <ul className="space-y-2 leading-relaxed pb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      The same copy is used across both since the error and recovery steps don't change by device.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>
+                      Layout adapts per platform: mobile stacks illustration above copy for thumb navigation; desktop places them side by side with a larger illustration
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
