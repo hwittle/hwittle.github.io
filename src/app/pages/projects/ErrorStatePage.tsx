@@ -100,12 +100,14 @@ export function ErrorStatePage() {
         </h2>
         <div className="grid md:grid-cols-1 gap-6">
           <div className="border-2 border-foreground bg-card p-6">
-            <div className="order-1">
-              <LightboxImage
-                src={ErrorImage}
-                alt="Mobile and desktop mockup of Chime's connectivity error screen with 'Looks like you're offline' message and frog illustration."
-                className="border-2 p-6"
-              />
+            <div className="order-1 flex justify-center">
+              <div className="md:w-3/4">
+                <LightboxImage
+                  src={ErrorImage}
+                  alt="Mobile and desktop mockup of Chime's connectivity error screen with 'Looks like you're offline' message and frog illustration."
+                  className="border-2 p-1"
+                />
+              </div>
             </div>
             <div className="order-2 grid md:grid-cols-2 md:gap-6 space-y-2 leading-relaxed">
               <div className="space-y-2">
@@ -117,13 +119,18 @@ export function ErrorStatePage() {
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Native apps don't let users manually enter or change URLs, making a 404 unlikely.
+                      Native apps don't let users manually enter
+                      or change URLs, making a 404 unlikely.
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-A connectivity error is a more realistic, higher-stakes failure. Losing connection mid-transaction causes real anxiety about money and security.                    </span>
+                      A connectivity error is a more realistic,
+                      higher-stakes failure. Losing connection
+                      mid-transaction causes real anxiety about
+                      money and security.{" "}
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -133,13 +140,18 @@ A connectivity error is a more realistic, higher-stakes failure. Losing connecti
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      "Looks like you're offline" replaces alarming alternatives like "No connection detected" or technical terms like "Network error".
+                      "Looks like you're offline" replaces
+                      alarming alternatives like "No connection
+                      detected" or technical terms like "Network
+                      error".
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Conversational phrasing matches Chime's tone and explains the issue plainly without raising user anxiety.
+                      Conversational phrasing matches Chime's
+                      tone and explains the issue plainly
+                      without raising user anxiety.
                     </span>
                   </li>
                 </ul>
@@ -150,12 +162,21 @@ A connectivity error is a more realistic, higher-stakes failure. Losing connecti
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-Three sequential recovery steps: check connection. "Still no luck?" acknowledges frustration before offering the next step. Then "close the app and come back" provides a concrete alternative.                    </span>
+                      Three sequential recovery steps: check
+                      connection. "Still no luck?" acknowledges
+                      frustration before offering the next step.
+                      Then "close the app and come back"
+                      provides a concrete alternative.{" "}
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-Closing line ("Your transactions will show you exactly where things stand") reassures without promising a transaction outcome the app can't guarantee.                    </span>
+                      Closing line ("Your transactions will show
+                      you exactly where things stand") reassures
+                      without promising a transaction outcome
+                      the app can't guarantee.{" "}
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -167,13 +188,18 @@ Closing line ("Your transactions will show you exactly where things stand") reas
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Only one action, "Try Again", reduces cognitive load during an already frustrating moment
+                      Only one action, "Try Again", reduces
+                      cognitive load during an already
+                      frustrating moment
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Other navigation was deliberately omitted because it requires a connection to function. Including it would create a false sense of options.
+                      Other navigation was deliberately omitted
+                      because it requires a connection to
+                      function. Including it would create a
+                      false sense of options.
                     </span>
                   </li>
                 </ul>
@@ -184,7 +210,10 @@ Closing line ("Your transactions will show you exactly where things stand") reas
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Reuses Chime's existing 404 frog mascot in a new error context, preserving brand warmth and signaling a "minor inconvenience," not a serious problem.
+                      Reuses Chime's existing 404 frog mascot in
+                      a new error context, preserving brand
+                      warmth and signaling a "minor
+                      inconvenience," not a serious problem.
                     </span>
                   </li>
                 </ul>
@@ -197,13 +226,18 @@ Closing line ("Your transactions will show you exactly where things stand") reas
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      The same copy is used across both since the error and recovery steps don't change by device.
+                      The same copy is used across both since
+                      the error and recovery steps don't change
+                      by device.
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">▸</span>
                     <span>
-                      Layout adapts per platform: mobile stacks illustration above copy for thumb navigation; desktop places them side by side with a larger illustration
+                      Layout adapts per platform: mobile stacks
+                      illustration above copy for thumb
+                      navigation; desktop places them side by
+                      side with a larger illustration
                     </span>
                   </li>
                 </ul>

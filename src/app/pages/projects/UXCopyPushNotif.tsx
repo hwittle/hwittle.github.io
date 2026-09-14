@@ -122,7 +122,7 @@ export function UXCopyPushNotif() {
                 <LightboxImage
                   src={WishlistImage}
                   alt="Mock design of two iPhones with Steam Wishlist notification in Collapsed and Expanded forms."
-                  className="border-2 p-6"
+                  className="border-2 p-1"
                 />
               </div>
 
@@ -239,7 +239,7 @@ export function UXCopyPushNotif() {
                 <LightboxImage
                   src={SummerImage}
                   alt="Mock design of an iPhone with a Steam Summer Sale notification."
-                  className="border-2 p-6"
+                  className="border-2 p-1"
                 />
               </div>
             </div>
@@ -255,7 +255,7 @@ export function UXCopyPushNotif() {
                 <LightboxImage
                   src={TradeImage}
                   alt="Mock design of an iPhone with a Steam Trade Offer notification."
-                  className="border-2 p-6"
+                  className="border-2 p-1"
                 />
               </div>
               {/* Right column - Bullets */}
@@ -358,7 +358,7 @@ export function UXCopyPushNotif() {
                 <LightboxImage
                   src={GiftImage}
                   alt="Mock design of an iPhone with a Steam Gift Received notification."
-                  className="border-2 p-6"
+                  className="border-2 p-1"
                 />
               </div>
             </div>
@@ -373,7 +373,7 @@ export function UXCopyPushNotif() {
                 <LightboxImage
                   src={PlaytestImage}
                   alt="Mock design of two iPhones with Steam Playtest Accepted notification in Collapsed and Expanded forms."
-                  className="border-2 p-6"
+                  className="border-2 p-1"
                 />
               </div>
 
