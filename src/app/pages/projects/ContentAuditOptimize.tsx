@@ -82,79 +82,51 @@ export function ContentAuditOptimize() {
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            In the field of travel e-commerce, car rental
-            companies are characterized by high levels of
-            friction. Customers frequently have to deal with
-            unfamiliar insurance jargon, unclear pricing
-            arrangements, and a number of additional options all
-            while under time pressure. Content that increases
-            this friction by using vague language, manipulative
-            presentation, or inconsistent information damages
-            trust and leads directly to booking abandonment.
-          </p>
-          <p>
-            Car rental platforms are a high friction category in
-            travel e-commerce. Users are often navigating
-            unfamiliar insurance terminology, opaque pricing
-            structures, and multiple add-on decisions under time
-            pressure. Content that compounds that friction
-            through vague language, manipulative framing, or
-            inconsistent information erodes trust and
-            contributes directly to booking abandonment.
-          </p>
-          <p>
-            The audit focuses on five main pages that are part
-            of the Hertz desktop booking process: vehicle
-            selection, protection coverage, the protection
-            modal, add-ons, and checkout. Each of these pages is
-            assessed using the following criteria:
+            Car rental platforms are a high-friction category in
+            travel e-commerce. Users face unfamiliar insurance
+            terms, opaque pricing, and multiple add-on decisions
+            under time pressure. Content that adds to this
+            friction with vague language or manipulative framing
+            erodes trust and causes booking abandonment. This
+            audit examines five pages in Hertz's desktop booking
+            flow: vehicle selection, protection coverage, the
+            protection modal, add-ons, and checkout, evaluated
+            against five criteria:
           </p>
           <ul className="pl-4 space-y-2 leading-relaxed">
             <li className="flex items-start">
               <span className="mr-2">▸</span>
               <span>
-                <strong>Language clarity</strong> — is the copy
-                easy to understand without prior knowledge of
-                rental industry terminology
+                <strong>Language clarity</strong> — understandable without prior rental industry knowledge
               </span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">▸</span>
               <span>
-                <strong>Pricing transparency</strong> — is
-                pricing information complete, consistent, and
-                disclosed at the right point in the journey
+                <strong>Pricing transparency</strong> — complete, consistent, disclosed at the right point
               </span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">▸</span>
               <span>
-                <strong>Brand voice consistency</strong> — does
-                the copy maintain a consistent tone and style
-                across all pages
+                <strong>Brand voice consistency</strong> — consistent tone and style across pages
               </span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">▸</span>
               <span>
-                <strong>Ethical copy standards</strong> — does
-                the content respect user autonomy and avoid
-                manipulative persuasion patterns
+                <strong>Ethical copy standards</strong> — respects user autonomy, avoids manipulative patterns
               </span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">▸</span>
               <span>
-                <strong>Findability</strong> — is relevant
-                information easy to locate when users need it to
-                make a decision
+                <strong>Findability</strong> — relevant information easy to locate when needed
               </span>
             </li>
           </ul>
           <p>
-            The findings are classified as Add, Remove, or
-            Update and each case is given specific
-            recommendations.
+            Findings are classified as Add, Remove, or Update, each with a specific recommendation.
           </p>
         </div>
       </section>
@@ -165,18 +137,42 @@ export function ContentAuditOptimize() {
           Rationale
         </h2>
 
+        {/* Summary of findings */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
+          <div>
+            <span className="font-bold block mb-1">
+              FINDINGS:
+            </span>
+            <span>15 across 5 pages</span>
+          </div>
+          <div>
+            <span className="font-bold block mb-1">ADD:</span>
+            <span>2</span>
+          </div>
+          <div>
+            <span className="font-bold block mb-1">REMOVE:</span>
+            <span>3</span>
+          </div>
+          <div>
+            <span className="font-bold block mb-1">UPDATE:</span>
+            <span>10</span>
+          </div>
+        </div>
+
         {/* Table 1: Vehicle Selection */}
         <div className="grid md:grid-cols-1 gap-6 pb-20">
           <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
             {/* Single grid container controlling all column widths */}
             <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
               {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
-                <LightboxImage
-                  src={AuditImage1}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
-                  className="border-2 p-6 w-full"
-                />
+              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6 flex justify-center">
+                <div className="md:w-3/4 w-full">
+                  <LightboxImage
+                    src={AuditImage1}
+                    alt="Screenshot of Hertz's vehicle selection page with 2 red boxes highlighting areas of concern."
+                    className="border-2 p-1"
+                  />
+                </div>
               </div>
 
               {/* Row 2: Column Headers */}
@@ -261,7 +257,7 @@ export function ContentAuditOptimize() {
               <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
                 <LightboxImage
                   src={AuditImage2}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Screenshot of Hertz's protection plan page with 4 red boxes highlighting areas of concern."
                   className="border-2 p-6 w-full"
                 />
               </div>
@@ -399,12 +395,12 @@ export function ContentAuditOptimize() {
               <div className="col-span-3 grid grid-cols-1 md:grid-cols-[2fr_2fr] border-b-2 border-foreground p-6">
                 <LightboxImage
                   src={AuditImage3_1}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Screenshot of Hertz's protection plan modal with 3 red boxes highlighting areas of concern."
                   className="border-2 p-6 w-full"
                 />
                 <LightboxImage
                   src={AuditImage3_2}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Screenshot of Hertz's protection plan modal with 1 red boxes highlighting areas of concern."
                   className="border-2 p-6 w-full"
                 />
               </div>
@@ -566,7 +562,7 @@ export function ContentAuditOptimize() {
               <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
                 <LightboxImage
                   src={AuditImage4}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Screenshot of Hertz's addon selection page with 6 red boxes highlighting areas of concern."
                   className="border-2 p-6 w-full"
                 />
               </div>
@@ -756,7 +752,7 @@ export function ContentAuditOptimize() {
               <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
                 <LightboxImage
                   src={AuditImage5}
-                  alt="Mock design of two iPhones with Steam Wishlist announcement in Collapsed and Expanded forms."
+                  alt="Screenshot of Hertz's checkout page with 2 red boxes highlighting areas of concern."
                   className="border-2 p-6 w-full"
                 />
               </div>

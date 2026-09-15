@@ -46,13 +46,13 @@ export function ErrorStatePage() {
 
       {/* Project Header */}
       <header className="mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
-        <div className="mb-4 text-sm uppercase tracking-widest text-muted-foreground">
+        <div className="mb-4 uppercase tracking-widest text-muted-foreground">
           {project.category}
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight mb-6">
           {project.title}
         </h1>
-        <div className="grid md:grid-cols-3 gap-6 text-sm">
+        <div className="grid md:grid-cols-3 gap-6">
           <div>
             <span className="font-bold block mb-1">
               CONTEXT:

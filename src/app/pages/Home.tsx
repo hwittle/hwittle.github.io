@@ -1,26 +1,27 @@
 import { projects, getGroupedProjects } from "../data/projects";
 import { Link } from "react-router";
+import { RotatingHeadline } from "../components/RotatingHeadline";
 
 export function Home() {
   const groupedProjects = getGroupedProjects();
 
   return (
     <div className="container mx-auto px-4">
-      {/* HERO */}
-      <section className="h-[calc(100vh-2rem)] flex flex-col items-center justify-center relative -mx-4 px-4 mb-16">
-        {/* Newspaper Masthead */}
-        <div className="absolute top-8 left-0 right-0 text-center border-y-4 border-double border-foreground py-3">
-          <div className="flex items-center justify-center gap-4">
-            <div className="hidden md:block border-t-2 border-foreground w-16"></div>
-            <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Vol. V · Issue 003 · September 2026
-            </div>
-            <div className="hidden md:block border-t-2 border-foreground w-16"></div>
+      {/* Newspaper Masthead */}
+      <div className="text-center border-y-4 border-double border-foreground py-3 mt-6">
+        <div className="flex items-center justify-center gap-4">
+          <div className="hidden md:block border-t-2 border-foreground w-16"></div>
+          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Vol. V · Issue 004 · September 2026
           </div>
+          <div className="hidden md:block border-t-2 border-foreground w-16"></div>
         </div>
+      </div>
 
+      {/* HERO */}
+      <section className="flex flex-col items-center relative -mx-4 px-4 mb-8 md:mb-12">
         {/* Main Headline */}
-        <div className="max-w-4xl text-center px-4 -mt-4">
+        <div className="max-w-4xl text-center px-4 mt-6">
           <div className="flex items-center justify-center gap-2 mb-6 md:mb-8">
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
             <div className="text-xl md:text-2xl">◆</div>
@@ -42,17 +43,18 @@ export function Home() {
             time.
           </p>
 
-          <div className="flex items-center justify-center gap-2 mt-6 md:mt-8">
+          <RotatingHeadline />
+
+          <div className="flex items-center justify-center gap-2 mt-8 mb-6 md:mt-8 md:mb-6">
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
             <div className="text-xl md:text-2xl">◆</div>
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
           </div>
-        </div>
 
-        {/* Fold line + scroll indicator */}
-        <div className="absolute bottom-8 md:bottom-12 left-0 right-0">
-          <div className="border-t-2 border-dashed border-foreground/20 w-full"></div>
-          <div className="flex flex-col items-center animate-bounce mt-6">
+          {/* Fold line + scroll indicator */}
+          <div className="border-t-2 border-dashed border-foreground/20 w-full mb-12"></div>
+
+          <div className="flex flex-col items-center animate-bounce">
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
               More Below
             </div>
@@ -62,31 +64,24 @@ export function Home() {
       </section>
 
       {/* ABOUT + CONTACT */}
-      <section className="mb-16 border-b-2 border-dashed border-foreground/30 pb-12 mt-12">
+      <section className="mb-16 border-b-2 border-dashed border-foreground/30 pb-12">
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="min-w-0">
             <h2 className="text-3xl mb-6 uppercase tracking-wide border-l-4 border-foreground pl-4">
               About
             </h2>
             <p className="mb-4 leading-relaxed">
-              For three years I have worked on transforming
-              technical complexity into content that actually
-              makes sense to people; earlier in my career I
-              taught K–12 students how to build games and apps,
-              and from that experience I realised that the point
-              at which someone ceases to feel intimidated and
-              begins to engage is more than worth the careful
-              choice of each word.
-            </p>
-            <p className="mb-4 leading-relaxed">
-              The way I write is influenced by that experience:
-              programming emphasizes functionality, writing
-              stresses translation, and UX is concerned with
-              navigation. The finest experiences are achieved
-              when all three aspects work in unison, and that is
-              the balance I apply to each project—ensuring the
-              content is clear enough to get people moving
-              without making the complexity seem overwhelming.
+              For three years I have turned technical complexity
+              into content that people actually understand,
+              having previously worked with K-12 students to
+              teach them how to build games and apps, during
+              which I realised that the moment someone ceases to
+              feel intimidated is more than worth each and every
+              careful word choice. My writing lies at the
+              intersection of function, translation and
+              navigation: it is clear enough to enable people to
+              move forward without sacrificing the complexity
+              that makes the work worthwhile.
             </p>
           </div>
           <div className="min-w-0">
@@ -94,39 +89,39 @@ export function Home() {
               Contact & Links
             </h2>
             <div className="bg-card border-2 border-foreground p-8 w-full">
-              <div className="space-y-3">
-                <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">
+              <div className="grid grid-cols-1 gap-6">
+                <div className="min-w-0">
+                  <span className="font-bold block mb-1">
                     EMAIL:
                   </span>
                   <a
                     target="_blank"
                     href="mailto:whitney.tran@proton.me"
-                    className="underline hover:text-muted-foreground truncate min-w-0"
+                    className="underline hover:text-muted-foreground truncate block min-w-0"
                   >
                     whitney.tran@proton.me
                   </a>
                 </div>
-                <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">
+                <div className="min-w-0">
+                  <span className="font-bold block mb-1">
                     LINKEDIN:
                   </span>
                   <a
                     target="_blank"
                     href="https://www.linkedin.com/in/whitneytran/"
-                    className="underline hover:text-muted-foreground truncate min-w-0"
+                    className="underline hover:text-muted-foreground truncate block min-w-0"
                   >
                     linkedin.com/in/whitneytran/
                   </a>
                 </div>
-                <div className="flex items-center min-w-0">
-                  <span className="font-bold mr-4 w-24 shrink-0">
+                <div className="min-w-0">
+                  <span className="font-bold block mb-1">
                     GITHUB:
                   </span>
                   <a
                     target="_blank"
                     href="https://github.com/hwittle"
-                    className="underline hover:text-muted-foreground truncate min-w-0"
+                    className="underline hover:text-muted-foreground truncate block min-w-0"
                   >
                     github.com/hwittle
                   </a>
