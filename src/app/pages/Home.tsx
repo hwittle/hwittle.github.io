@@ -1,147 +1,86 @@
 import { projects, getGroupedProjects } from "../data/projects";
 import { Link } from "react-router";
+import { Masthead } from "../components/Masthead";
 import { RotatingHeadline } from "../components/RotatingHeadline";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 export function Home() {
   const groupedProjects = getGroupedProjects();
 
-  return (
-    <div className="container mx-auto px-4">
-      {/* Newspaper Masthead */}
-      <div className="text-center border-y-4 border-double border-foreground py-3 mt-6">
-        <div className="flex items-center justify-center gap-4">
-          <div className="hidden md:block border-t-2 border-foreground w-16"></div>
-          <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Vol. V · Issue 004 · September 2026
-          </div>
-          <div className="hidden md:block border-t-2 border-foreground w-16"></div>
-        </div>
-      </div>
+  const location = useLocation();
 
-      {/* HERO */}
+  useEffect(() => {
+    if (
+      (location.state as { scrollTo?: string } | null)
+        ?.scrollTo !== "projects"
+    )
+      return;
+    document
+      .getElementById("projects")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.state]);
+
+  return (
+    <div className="container mx-auto pt-6">
+      <Masthead>
+        Vol. V · Issue 005 ·{" "}
+        {new Date().toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        })}
+      </Masthead>
+
+      {/* HERO SECTION */}
       <section className="flex flex-col items-center relative -mx-4 px-4 mb-8 md:mb-12">
-        {/* Main Headline */}
+        {/* HEADLINE */}
         <div className="max-w-4xl text-center px-4 mt-6">
+          {/* DIAMOND DIVIDER */}
           <div className="flex items-center justify-center gap-2 mb-6 md:mb-8">
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
             <div className="text-xl md:text-2xl">◆</div>
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
           </div>
 
-          <div className="mb-3 md:mb-4 text-xs md:text-sm uppercase tracking-widest text-muted-foreground">
+          {/* HERO CONTENT */}
+          <div className="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 ">
             Est. 2026
           </div>
-          <h1 className="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-6xl uppercase tracking-tight border-y-2 border-foreground py-4 md:py-6">
+          <h1 className="text-3xl md:text-6xl uppercase tracking-tight border-y-2 border-foreground mb-4 py-4 md:py-6">
             Whitney Tran
           </h1>
-          <p className="text-base md:text-lg lg:text-xl mb-4 md:mb-6 leading-relaxed uppercase tracking-wide">
+          <p className="text-base md:text-lg mb-4 md:mb-6 leading-relaxed uppercase tracking-wide">
             Technical & UX Writer
           </p>
           <p className="text-sm md:text-base leading-loose max-w-2xl mx-auto">
-            Writing that meets people where they are. Crafting
-            content that simplifies complexity, one word at a
-            time.
+            Turning complex products into clear experiences.
+            Technical writer specializing in product docs, APIs,
+            and docs-as-code—now exploring UX writing.
           </p>
 
+          {/* ROTATING HEADLINE */}
           <RotatingHeadline />
 
+          {/* DIAMOND DIVIDER */}
           <div className="flex items-center justify-center gap-2 mt-8 mb-6 md:mt-8 md:mb-6">
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
             <div className="text-xl md:text-2xl">◆</div>
             <div className="border-t-2 border-foreground w-8 md:w-12"></div>
           </div>
-
-          {/* Fold line + scroll indicator */}
-          <div className="border-t-2 border-dashed border-foreground/20 w-full mb-12"></div>
-
-          <div className="flex flex-col items-center animate-bounce">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-              More Below
-            </div>
-            <div className="text-2xl text-foreground">↓</div>
-          </div>
         </div>
       </section>
+      {/* HERO SECTION END */}
 
-      {/* ABOUT + CONTACT */}
-      <section className="mb-16 border-b-2 border-dashed border-foreground/30 pb-12">
-        <div className="grid sm:grid-cols-2 gap-8">
-          <div className="min-w-0">
-            <h2 className="text-3xl mb-6 uppercase tracking-wide border-l-4 border-foreground pl-4">
-              About
-            </h2>
-            <p className="mb-4 leading-relaxed">
-              For three years I have turned technical complexity
-              into content that people actually understand,
-              having previously worked with K-12 students to
-              teach them how to build games and apps, during
-              which I realised that the moment someone ceases to
-              feel intimidated is more than worth each and every
-              careful word choice. My writing lies at the
-              intersection of function, translation and
-              navigation: it is clear enough to enable people to
-              move forward without sacrificing the complexity
-              that makes the work worthwhile.
-            </p>
-          </div>
-          <div className="min-w-0">
-            <h2 className="text-3xl mb-6 uppercase tracking-wide border-l-4 border-foreground pl-4">
-              Contact & Links
-            </h2>
-            <div className="bg-card border-2 border-foreground p-8 w-full">
-              <div className="grid grid-cols-1 gap-6">
-                <div className="min-w-0">
-                  <span className="font-bold block mb-1">
-                    EMAIL:
-                  </span>
-                  <a
-                    target="_blank"
-                    href="mailto:whitney.tran@proton.me"
-                    className="underline hover:text-muted-foreground truncate block min-w-0"
-                  >
-                    whitney.tran@proton.me
-                  </a>
-                </div>
-                <div className="min-w-0">
-                  <span className="font-bold block mb-1">
-                    LINKEDIN:
-                  </span>
-                  <a
-                    target="_blank"
-                    href="https://www.linkedin.com/in/whitneytran/"
-                    className="underline hover:text-muted-foreground truncate block min-w-0"
-                  >
-                    linkedin.com/in/whitneytran/
-                  </a>
-                </div>
-                <div className="min-w-0">
-                  <span className="font-bold block mb-1">
-                    GITHUB:
-                  </span>
-                  <a
-                    target="_blank"
-                    href="https://github.com/hwittle"
-                    className="underline hover:text-muted-foreground truncate block min-w-0"
-                  >
-                    github.com/hwittle
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SELECTED WORKS */}
+      {/* PROJECTS */}
       <section
         id="projects"
-        className="mb-16 border-b-2 border-dashed border-foreground/30 pb-12"
+        className="mb-16 scroll-mt-20 border-y-2 border-dashed border-foreground/30 pb-12 pt-10"
       >
         <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl uppercase tracking-tight mb-4">
-            Selected Works
+          <h2 className="text-xl md:text-3xl uppercase tracking-tight mb-4">
+            Projects
           </h2>
-          <p className="text-base leading-relaxed">
+          <p className="text-sm md:text-base leading-relaxed">
             A curated collection of projects with each piece
             representing a unique challenge and creative
             solution.
@@ -157,51 +96,46 @@ export function Home() {
                     {group}
                   </h3>
                 )}
-                <div className="grid gap-8 md:gap-12">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {groupProjects.map((project) => (
-                    <Link
+                    <article
                       key={project.slug}
-                      to={`/projects/${project.slug}`}
-                      className="border-2 border-foreground bg-card p-6 md:p-8 hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
+                      className="group relative flex flex-col border-2 border-foreground bg-card transition-shadow hover:shadow-[4px_4px_0_0_var(--foreground)] focus-within:shadow-[4px_4px_0_0_var(--foreground)]"
                     >
-                      <div className="grid md:grid-cols-[1fr_2fr] gap-6">
-                        <div className="space-y-4">
-                          <h3 className="text-2xl md:text-3xl uppercase leading-tight">
+                      <img
+                        src={project.thumbnail}
+                        alt={project.thumbnailAlt}
+                        loading="lazy"
+                        className="aspect-[3/2] w-full border-b-2 border-foreground object-cover object-top"
+                      />
+                      <div className="space-y-3 p-4 md:p-5">
+                        <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                          {project.category} · {project.year}
+                        </p>
+                        <h4 className="text-xl uppercase leading-tight">
+                          <Link
+                            to={`/projects/${project.slug}`}
+                            className="after:absolute after:inset-0"
+                          >
                             {project.title}
-                          </h3>
-                          <div className="space-y-2">
-                            <div className="flex items-center text-sm">
-                              <span className="font-bold mr-2 w-24">
-                                CATEGORY:
-                              </span>
-                              <span>{project.category}</span>
-                            </div>
-                            <div className="flex items-center text-sm">
-                              <span className="font-bold mr-2 w-24">
-                                YEAR:
-                              </span>
-                              <span>{project.year}</span>
-                            </div>
-                          </div>
-                          <div className="flex flex-wrap gap-2 pt-2">
-                            {project.tags.map((tag) => (
-                              <span
-                                key={tag}
-                                className="px-3 py-1 bg-background border border-foreground text-xs uppercase tracking-wide"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col justify-between">
-                          <p className="leading-relaxed mb-6">
-                            {project.description}
-                          </p>
+                          </Link>
+                        </h4>
+                        <p className="text-sm leading-relaxed">
+                          {project.description}
+                        </p>
+                        {/* tags */}
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="border border-foreground bg-background px-3 py-1 text-xs uppercase tracking-wide"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                         </div>
                       </div>
-                    </Link>
+                    </article>
                   ))}
                 </div>
               </div>
@@ -209,22 +143,6 @@ export function Home() {
           )}
         </div>
       </section>
-
-      {/* FOOTER */}
-      <div className="text-center text-sm text-muted-foreground mt-16 pt-8 pb-12 border-t border-foreground/20">
-        <p>
-          ◆{" "}
-          <span className="hidden sm:inline">
-            {projects.length} Projects ◆{" "}
-          </span>
-          Est. 2026
-          <span className="hidden sm:inline">
-            {" "}
-            ◆ Crafted with care
-          </span>{" "}
-          ◆
-        </p>
-      </div>
     </div>
   );
 }

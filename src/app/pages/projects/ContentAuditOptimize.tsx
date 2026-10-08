@@ -1,891 +1,200 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
+import { ProjectOverview } from "../../components/ProjectOverview";
 import { projects } from "../../data/projects";
 
-import { LightboxImage } from "../../components/LightboxImage";
-import AuditImage1 from "../../images/audit-transport-1.png";
-import AuditImage2 from "../../images/audit-transport-2.png";
-import AuditImage3_1 from "../../images/audit-transport-3-no.png";
-import AuditImage3_2 from "../../images/audit-transport-3-yes.png";
-import AuditImage4 from "../../images/audit-transport-4.png";
-import AuditImage5 from "../../images/audit-transport-5.png";
+import { FindingsTable } from "../../components/FindingsTable";
+import {
+  criteria,
+  vehicleFindings,
+  protectionFindings,
+  modalFindings,
+  addonFindings,
+  checkoutFindings,
+  pagesAudited,
+  findingCounts,
+  overview,
+} from "../../data/auditData";
+
+/* Image Imports */
+import AuditImage1 from "../../data/images/audit-transport-1.png";
+import AuditImage2 from "../../data/images/audit-transport-2.png";
+import AuditImage3_1 from "../../data/images/audit-transport-3-no.png";
+import AuditImage3_2 from "../../data/images/audit-transport-3-yes.png";
+import AuditImage4 from "../../data/images/audit-transport-4.png";
+import AuditImage5 from "../../data/images/audit-transport-5.png";
 
 export function ContentAuditOptimize() {
-  const navigate = useNavigate();
   const project = projects.find(
     (p) => p.slug === "content-audit-optimize",
   )!;
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto py-12">
       {/* Back Navigation */}
-      <button
-        onClick={() => {
-          if (window.location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-              const el = document.getElementById("projects");
-              if (el) {
-                const top =
-                  el.getBoundingClientRect().top +
-                  window.scrollY -
-                  80;
-                window.scrollTo({ top, behavior: "smooth" });
-              }
-            }, 100);
-          } else {
-            const el = document.getElementById("projects");
-            if (el) {
-              const top =
-                el.getBoundingClientRect().top +
-                window.scrollY -
-                80;
-              window.scrollTo({ top, behavior: "smooth" });
-            }
-          }
-        }}
-        className="inline-flex items-center mb-8 uppercase tracking-wide hover:underline"
+      <Link
+        to="/"
+        state={{ scrollTo: "projects" }}
+        className="mb-8 inline-flex items-center uppercase tracking-wide underline-offset-4 hover:underline"
       >
-        ← Back to Home
-      </button>
+        ← Back to Projects
+      </Link>
 
-      {/* Project Header */}
+      {/* HEADER */}
       <header className="mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
-        <div className="mb-4  uppercase tracking-widest text-muted-foreground">
+        <div className="mb-4 uppercase tracking-widest text-muted-foreground">
           {project.category}
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight mb-6">
+        <h1 className="mb-6 text-4xl uppercase tracking-tight md:text-5xl lg:text-6xl">
           {project.title}
         </h1>
-        <div className="grid md:grid-cols-3 gap-6 ">
+
+        <div className="grid gap-6 md:grid-cols-3">
           <div>
-            <span className="font-bold block mb-1">
+            <span className="mb-1 block font-bold">
               CONTEXT:
             </span>
             <span>Independent Audit</span>
           </div>
           <div>
-            <span className="font-bold block mb-1">YEAR:</span>
+            <span className="mb-1 block font-bold">YEAR:</span>
             <span>{project.year}</span>
           </div>
           <div>
-            <span className="font-bold block mb-1">ROLE:</span>
+            <span className="mb-1 block font-bold">ROLE:</span>
             <span>UX Writer</span>
+          </div>
+
+          <div className="md:col-span-3">
+            <span className="mb-2 block font-bold">
+              SKILLS &amp; TOOLS:
+            </span>
+            <ul className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="border border-foreground bg-card px-3 py-1 text-xs uppercase tracking-wide"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </header>
+      {/* HEADER END */}
 
-      {/* Project Overview */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Overview
-        </h2>
-        <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
-          <p>
-            Car rental platforms are a high-friction category in
-            travel e-commerce. Users face unfamiliar insurance
-            terms, opaque pricing, and multiple add-on decisions
-            under time pressure. Content that adds to this
-            friction with vague language or manipulative framing
-            erodes trust and causes booking abandonment. This
-            audit examines five pages in Hertz's desktop booking
-            flow: vehicle selection, protection coverage, the
-            protection modal, add-ons, and checkout, evaluated
-            against five criteria:
-          </p>
-          <ul className="pl-4 space-y-2 leading-relaxed">
-            <li className="flex items-start">
-              <span className="mr-2">▸</span>
-              <span>
-                <strong>Language clarity</strong> — understandable without prior rental industry knowledge
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">▸</span>
-              <span>
-                <strong>Pricing transparency</strong> — complete, consistent, disclosed at the right point
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">▸</span>
-              <span>
-                <strong>Brand voice consistency</strong> — consistent tone and style across pages
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">▸</span>
-              <span>
-                <strong>Ethical copy standards</strong> — respects user autonomy, avoids manipulative patterns
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2">▸</span>
-              <span>
-                <strong>Findability</strong> — relevant information easy to locate when needed
-              </span>
-            </li>
-          </ul>
-          <p>
-            Findings are classified as Add, Remove, or Update, each with a specific recommendation.
-          </p>
-        </div>
-      </section>
+      {/* OVERVIEW */}
+      <ProjectOverview {...overview} />
+      {/* OVERVIEW END */}
 
-      {/* Rationale */}
+      {/* RATIONALE */}
       <section className="mb-16">
         <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
           Rationale
         </h2>
 
-        {/* Summary of findings */}
-        <div className="grid md:grid-cols-4 gap-6 mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
-          <div>
-            <span className="font-bold block mb-1">
-              FINDINGS:
-            </span>
-            <span>15 across 5 pages</span>
-          </div>
-          <div>
-            <span className="font-bold block mb-1">ADD:</span>
-            <span>2</span>
-          </div>
-          <div>
-            <span className="font-bold block mb-1">REMOVE:</span>
-            <span>3</span>
-          </div>
-          <div>
-            <span className="font-bold block mb-1">UPDATE:</span>
-            <span>10</span>
-          </div>
-        </div>
-
-        {/* Table 1: Vehicle Selection */}
-        <div className="grid md:grid-cols-1 gap-6 pb-20">
-          <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
-            {/* Single grid container controlling all column widths */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
-              {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6 flex justify-center">
-                <div className="md:w-3/4 w-full">
-                  <LightboxImage
-                    src={AuditImage1}
-                    alt="Screenshot of Hertz's vehicle selection page with 2 red boxes highlighting areas of concern."
-                    className="border-2 p-1"
-                  />
+        {/* SUMMARY OF FINDINGS */}
+        <div className="mb-12 border-2 border-foreground bg-card">
+          <dl className="grid grid-cols-3 divide-x-2 divide-foreground text-center border-b-2 border-foreground">
+            {(["Add", "Remove", "Update"] as const).map(
+              (status) => (
+                <div key={status} className="p-4">
+                  <dt className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {status}
+                  </dt>
+                  <dd className="text-2xl md:text-3xl">
+                    {findingCounts[status]}
+                  </dd>
                 </div>
-              </div>
+              ),
+            )}
+          </dl>
 
-              {/* Row 2: Column Headers */}
-              {/* Column 1 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Finding
-                </h3>
-              </div>
-
-              {/* Column 2 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Status
-                </h3>
-              </div>
-
-              {/* Column 3 */}
-              <div className="p-6 border-b-2 border-foreground">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Recommendation
-                </h3>
-              </div>
-
-              {/* Row 3 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide">
-                  1. "Don't miss out on members-only rates!"
-                  banner at top creates urgency without context
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide">
-                  Replace with specific value statement such as
-                  "Members save up to X% — join free" to give
-                  users actionable information rather than vague
-                  pressure
-                </p>
-              </div>
-
-              {/* Row 4 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  2. "Unlock member rates" link appears on all
-                  cards without clarifying whether listed prices
-                  are already member rates or standard rates
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Add clarifying label such as "Standard rate"
-                  or "Member rate" next to the listed price so
-                  users understand what they are comparing
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="px-6 py-4 text-sm leading-relaxed text-muted-foreground">
+            <span className="font-bold uppercase tracking-wide text-foreground">
+              How to read:{" "}
+            </span>
+            Red boxes in each screenshot mark the areas of
+            concern. Numbered findings in the table below each
+            screenshot describe them.
+          </p>
         </div>
+        {/* SUMMARY OF FINDINGS END */}
 
-        {/* Table 2: Protection Selection */}
-        <div className="grid md:grid-cols-1 gap-6 pb-20">
-          <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
-            {/* Single grid container controlling all column widths */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
-              {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
-                <LightboxImage
-                  src={AuditImage2}
-                  alt="Screenshot of Hertz's protection plan page with 4 red boxes highlighting areas of concern."
-                  className="border-2 p-6 w-full"
-                />
-              </div>
-
-              {/* Row 2: Column Headers */}
-              {/* Column 1 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Finding
-                </h3>
-              </div>
-
-              {/* Column 2 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Status
-                </h3>
-              </div>
-
-              {/* Column 3 */}
-              <div className="p-6 border-b-2 border-foreground">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Recommendation
-                </h3>
-              </div>
-
-              {/* Row 3 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  1. "Online Only Discount" tag appears on all
-                  three options, diluting its meaning as a
-                  differentiator
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Reserve discount tag for options where the
-                  discount is meaningful or remove entirely if
-                  it applies universally
-                </p>
-              </div>
-
-              {/* Row 4 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  2. "I accept responsibility for damage to or
-                  theft of the vehicle and any third-party
-                  claims" uses legal liability language to
-                  manufacture anxiety before the user has
-                  declined
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Simplify to "I understand I am not adding
-                  rental protection" which is factually accurate
-                  without escalating emotional stakes
-                </p>
-              </div>
-
-              {/* Row 5 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  3. "It's better to have it and not need it,
-                  than need it and not have it" is persuasive
-                  framing disguised as wisdom in a financial
-                  decision context
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Remove</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Remove entirely, it does not provide useful
-                  information and uses emotional manipulation to
-                  influence a financial decision
-                </p>
-              </div>
-
-              {/* Row 6 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  4. "I accept the risk" as the decline CTA
-                  frames a neutral user choice as dangerous and
-                  irresponsible
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with neutral copy such as "Continue
-                  Without Protection" that describes the action
-                  without loaded language
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* TABLE OF FINDINGS */}
+        <div className="space-y-16">
+          <FindingsTable
+            title="Vehicle Selection"
+            narrowImage
+            images={[
+              {
+                src: AuditImage1,
+                alt: "Screenshot of Hertz's vehicle selection page with 2 red boxes highlighting areas of concern.",
+                caption:
+                  "Fig.2 Vehicle selection page with annotated findings",
+              },
+            ]}
+            findings={vehicleFindings}
+          />
+          <FindingsTable
+            title="Protection Selection"
+            images={[
+              {
+                src: AuditImage2,
+                alt: "Screenshot of Hertz's protection plan page with 4 red boxes highlighting areas of concern.",
+                caption:
+                  "Fig.3 Protection selection page with annotated findings",
+              },
+            ]}
+            findings={protectionFindings}
+          />
+          <FindingsTable
+            title="Protection Modal"
+            images={[
+              {
+                src: AuditImage3_1,
+                alt: "Screenshot of Hertz's protection plan modal with 3 red boxes highlighting areas of concern.",
+                caption:
+                  "Fig.4 Protection modal before a choice is made",
+              },
+              {
+                src: AuditImage3_2,
+                alt: "Screenshot of Hertz's protection plan modal with 1 red box highlighting an area of concern.",
+                caption:
+                  "Fig.5 Protection modal after declining protection",
+              },
+            ]}
+            findings={modalFindings}
+          />
+          <FindingsTable
+            title="Add-on Selection"
+            images={[
+              {
+                src: AuditImage4,
+                alt: "Screenshot of Hertz's add-on selection page with 6 red boxes highlighting areas of concern.",
+                caption:
+                  "Fig.6 Add-on selection page with annotated findings",
+              },
+            ]}
+            findings={addonFindings}
+          />
+          <FindingsTable
+            title="Checkout"
+            images={[
+              {
+                src: AuditImage5,
+                alt: "Screenshot of Hertz's checkout page with 2 red boxes highlighting areas of concern.",
+                caption:
+                  "Fig.7 Checkout page with annotated findings",
+              },
+            ]}
+            findings={checkoutFindings}
+          />
         </div>
-
-        {/* Table 3: Protection Modal */}
-        <div className="grid md:grid-cols-1 gap-6 pb-20">
-          <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
-            {/* Single grid container controlling all column widths */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
-              {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-3 grid grid-cols-1 md:grid-cols-[2fr_2fr] border-b-2 border-foreground p-6">
-                <LightboxImage
-                  src={AuditImage3_1}
-                  alt="Screenshot of Hertz's protection plan modal with 3 red boxes highlighting areas of concern."
-                  className="border-2 p-6 w-full"
-                />
-                <LightboxImage
-                  src={AuditImage3_2}
-                  alt="Screenshot of Hertz's protection plan modal with 1 red boxes highlighting areas of concern."
-                  className="border-2 p-6 w-full"
-                />
-              </div>
-
-              {/* Row 2: Column Headers */}
-              {/* Column 1 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Finding
-                </h3>
-              </div>
-
-              {/* Column 2 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Status
-                </h3>
-              </div>
-
-              {/* Column 3 */}
-              <div className="p-6 border-b-2 border-foreground">
-                <h3 className="uppercase tracking-wide font-bold">
-                  Recommendation
-                </h3>
-              </div>
-
-              {/* Row 3 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide">
-                  1. Modal reappears after user has already
-                  declined protection on the previous page,
-                  re-prompting a decision the user already made
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide">Remove</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide">
-                  Remove the modal entirely. Once a user
-                  declines on the protection page their decision
-                  should be respected without a secondary
-                  confirmation prompt
-                </p>
-              </div>
-
-              {/* Row 4 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  2. Modal headline "How will you cover damages
-                  and emergencies?" uses fear framing with an
-                  accident photo to reopen an already closed
-                  decision
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  If modal is retained for any reason, replace
-                  accident photo and fear based headline with
-                  neutral informational copy that respects the
-                  user's prior decision
-                </p>
-              </div>
-              {/* Row 5 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  3. "Recommended" tag in modal applies to Basic
-                  Protection, contradicting the previous page
-                  where it was applied to the "Complete
-                  Protection" option
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Standardize which option carries the
-                  Recommended tag consistently across all
-                  touchpoints
-                </p>
-              </div>
-              {/* Row 6 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  4. Selecting "I'll cover damage on my own"
-                  changes the CTA to "I'll take the risk" and
-                  displays a red warning text "You are fully
-                  responsible for damages and emergencies"
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with neutral CTA such as "Continue"
-                  and remove the red warning text which serves
-                  no informational purpose beyond reinforcing
-                  fear
-                </p>
-              </div>
-              {/* Row 7 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  5. Green text "Protect the car and enjoy peace
-                  of mind!" appears as a persistent nudge even
-                  in the unselected state
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Remove</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Remove entirely, it is promotional copy in a
-                  decision making context where neutral
-                  information serves users better
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Table 4: Add-on Selection */}
-        <div className="grid md:grid-cols-1 gap-6 pb-20">
-          <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
-            {/* Single grid container controlling all column widths */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
-              {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
-                <LightboxImage
-                  src={AuditImage4}
-                  alt="Screenshot of Hertz's addon selection page with 6 red boxes highlighting areas of concern."
-                  className="border-2 p-6 w-full"
-                />
-              </div>
-
-              {/* Row 2: Column Headers */}
-              {/* Column 1 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Finding
-                </h3>
-              </div>
-
-              {/* Column 2 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Status
-                </h3>
-              </div>
-
-              {/* Column 3 */}
-              <div className="p-6 border-b-2 border-foreground">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Recommendation
-                </h3>
-              </div>
-
-              {/* Row 3 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  1. Page headline "2.5 Million + customers
-                  purchased our popular add-ons in 2025!" is a
-                  broad social proof that doesn't help the user
-                  evaluate whether the add-on is relevant to
-                  their specific trip
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with trip specific context such as
-                  "Here are options to manage costs on the
-                  road!"
-                </p>
-              </div>
-
-              {/* Row 4 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  2. "Top picked item for California renters" is
-                  marketing copy without specificity about why
-                  it is top picked or what it means for this
-                  user
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with factual context such as
-                  "Recommended for trips using California toll
-                  roads"
-                </p>
-              </div>
-              {/* Row 5 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  3. Pulsing green live dot with "1.2M+ bought
-                  in 2025" simulates urgency through false real
-                  time social proof, a known dark pattern
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Remove</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Remove the pulsing animation and purchase
-                  count. If social proof is included, use
-                  verified and specific data presented as a
-                  static fact rather than a simulated live
-                  signal.
-                </p>
-              </div>
-              {/* Row 6 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  4. California map showing toll roads is
-                  visually engaging but the accompanying copy
-                  "California has over 870 miles of toll roads,
-                  bridges and more!" is vague and "and more" is
-                  undefined
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with specific and accurate copy that
-                  explains what qualifies as a toll road for the
-                  purposes of the "Unlimited Tolling" add-on
-                </p>
-              </div>
-              {/* Row 7 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  5. "Without unlimited tolling, a fee may apply
-                  plus toll charges" uses vague hedging language
-                  "may apply" that doesn't help users make an
-                  informed decision
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with specific fee disclosure such as
-                  the actual admin fee amount and per toll
-                  charge so users can make a genuine cost
-                  comparison
-                </p>
-              </div>
-              {/* Row 8 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  6. Prepaid Fuel warning "Returning an empty
-                  tank could result in est. $144 refueling
-                  charge" uses a specific scary number without
-                  context about how it was calculated
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Add brief explanation of how the estimate was
-                  calculated and note that actual charges vary,
-                  which is already disclosed in smaller text
-                  below but should be more prominent
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Table 5: Checkout */}
-        <div className="grid md:grid-cols-1 gap-6">
-          <div className="border-t-2 border-l-2 border-r-2 border-foreground bg-card">
-            {/* Single grid container controlling all column widths */}
-            <div className="grid grid-cols-1 md:grid-cols-[2fr_0.5fr_2fr]">
-              {/* Row 1: Image spanning all 3 columns */}
-              <div className="col-span-1 md:col-span-3 border-b-2 border-foreground p-6">
-                <LightboxImage
-                  src={AuditImage5}
-                  alt="Screenshot of Hertz's checkout page with 2 red boxes highlighting areas of concern."
-                  className="border-2 p-6 w-full"
-                />
-              </div>
-
-              {/* Row 2: Column Headers */}
-              {/* Column 1 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Finding
-                </h3>
-              </div>
-
-              {/* Column 2 */}
-              <div className="p-6 border-b-2 border-foreground md:border-r-2">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Status
-                </h3>
-              </div>
-
-              {/* Column 3 */}
-              <div className="p-6 border-b-2 border-foreground">
-                <h3 className="uppercase tracking-wide  font-bold">
-                  Recommendation
-                </h3>
-              </div>
-
-              {/* Row 3 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  1. Countdown timer "Best Rate held for:"
-                  creates an artificial time pressure at
-                  checkout without explanation of what happens
-                  when it expires
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Add brief copy explaining the consequence of
-                  the timer expiring such as "Rate may change if
-                  session expires" so users understand the
-                  actual stakes and also move the timer location
-                  towards the booking options where it is more
-                  visible
-                </p>
-              </div>
-
-              {/* Row 4 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  2. "Book now to guarantee this rate!" creates
-                  urgency without explaining what rate guarantee
-                  means or when it expires
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Update</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Replace with specific information such as
-                  "This rate is held until your pickup date" or
-                  reference the countdown timer already visible
-                  at the top of the page
-                </p>
-              </div>
-
-              {/* Row 5 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  3. Only one payment option shown "Book Now and
-                  Pay Later" without disclosing that a more
-                  expensive pay-at-pickup option exists for
-                  bookings closer to the rental date
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Add</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Disclose both payment options and their
-                  respective prices at the vehicle selection
-                  stage rather than revealing pricing
-                  differences only at checkout
-                </p>
-              </div>
-
-              {/* Row 6 */}
-              {/* Column 1 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">
-                  4. "Don't miss out on members-only rates!"
-                  banner persists into checkout despite user
-                  having already completed vehicle selection,
-                  serving no useful purpose at this stage
-                </p>
-              </div>
-
-              {/* Column 2 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground md:border-r-2">
-                <p className="tracking-wide ">Remove</p>
-              </div>
-
-              {/* Column 3 */}
-              <div className="pt-2 pl-6 pr-6 pb-2 border-b-2 border-foreground">
-                <p className="tracking-wide ">
-                  Remove or replace with a contextually relevant
-                  message at checkout such as order summary
-                  confirmation copy
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* TABLE OF FINDINGS END */}
       </section>
+      {/* RATIONALE END */}
 
       {/* Reflection */}
       <section className="mb-16">
@@ -949,20 +258,6 @@ export function ContentAuditOptimize() {
             less tolerance for persuasive techniques that delay
             them.
           </p>
-        </div>
-      </section>
-
-      {/* Tags */}
-      <section className="mb-16">
-        <div className="flex flex-wrap gap-3">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-4 py-2 bg-foreground text-background uppercase tracking-wide"
-            >
-              {tag}
-            </span>
-          ))}
         </div>
       </section>
 

@@ -30,11 +30,10 @@ import { APIDocumentation } from "./pages/projects/APIDocumentation";
 import { ContentAuditOptimize } from "./pages/projects/ContentAuditOptimize";
 import { ErrorStatePage } from "./pages/projects/ErrorStatePage";
 import { FAQDevelopment } from "./pages/projects/FAQDevelopment";
-import { MobileOnboardFlow } from "./pages/projects/MobileOnboardFlow";
 import { OnlineUsersGuide } from "./pages/projects/OnlineUsersGuide";
 import { PrintedSetupGuide } from "./pages/projects/PrintedSetupGuide";
-import { SteamWebAPI } from "./pages/projects/SteamWebAPI";
 import { UXCopyPushNotif } from "./pages/projects/UXCopyPushNotif";
+import { About } from "./pages/About";
 
 // NOTE: Project paths below should match the "slug" field from /src/app/data/projects.ts
 // When you update a project slug in projects.ts, update the corresponding path here as well
@@ -44,6 +43,7 @@ export const router = createBrowserRouter([
     Component: Root,
     children: [
       { index: true, Component: Home },
+      { path: "about", Component: About },
       // Individual project detail pages - paths match slugs from data/projects.ts
       {
         path: "projects/api-documentation",
@@ -62,20 +62,12 @@ export const router = createBrowserRouter([
         Component: FAQDevelopment,
       },
       {
-        path: "projects/mobile-onboard-flow",
-        Component: MobileOnboardFlow,
-      },
-      {
         path: "projects/online-users-guide",
         Component: OnlineUsersGuide,
       },
       {
         path: "projects/printed-setup-guide",
         Component: PrintedSetupGuide,
-      },
-      {
-        path: "projects/steam-web-api",
-        Component: SteamWebAPI,
       },
       {
         path: "projects/uxcopy-push-notif",

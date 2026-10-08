@@ -9,6 +9,15 @@
  * 3. Register its route in /src/app/routes.ts (path must match slug)
  */
 
+/** Image Imports **/
+import apiThumb from "./images/api-steam-overview.png";
+import auditThumb from "./images/audit-transport-2.png";
+import errorThumb from "./images/connectivity-error-state.png";
+import faqThumb from "./images/faq-dev-overview.png";
+import ugThumb from "./images/ug-html-overview.png";
+import setupThumb from "./images/setup-guide-overview.png";
+import uxpushThumb from "./images/push-wishlist.png";
+
 export interface Project {
   title: string;
   category: string; // Group label shown in Selected Works (e.g. "Technical Writing", "UX Writing")
@@ -16,6 +25,8 @@ export interface Project {
   description: string;
   tags: string[];
   slug: string; // Must match route path in routes.ts; also used as React key
+  thumbnail: string;
+  thumbnailAlt: string;
 }
 
 export const projects: Project[] = [
@@ -25,8 +36,11 @@ export const projects: Project[] = [
     year: 2026,
     description:
       "Developed unofficial API documentation for the Steam Web API, covering five endpoints with detailed parameter references, real response examples across JSON, XML, and VDF formats, and observations on undocumented fields and privacy behaviors.",
-    tags: ["Docs-as-Code", "Markdown", "MkDocs", "Postman"],
+    tags: ["Docs-as-Code", "GitHub Actions",  "Markdown", "MkDocs", "Postman", "YAML"],
     slug: "api-documentation",
+    thumbnail: apiThumb,
+    thumbnailAlt:
+      "Thumbnail for the Unofficial Steam Web API site",
   },
   {
     title: "Content Audit for Optimization",
@@ -36,6 +50,8 @@ export const projects: Project[] = [
       "Conducted an independent content audit of Hertz's desktop car rental booking flow, identifying friction points, manipulative copy patterns, and pricing transparency issues across five key pages.",
     tags: ["Content Audit", "Content Strategy", "Copywriting"],
     slug: "content-audit-optimize",
+    thumbnail: auditThumb,
+    thumbnailAlt: "Thumbnail for a content audit project",
   },
   {
     title: "Error State Page",
@@ -45,6 +61,8 @@ export const projects: Project[] = [
       "Designed a connectivity error state for Chime's mobile and desktop app, crafting copy that balances Chime's friendly brand voice with the emotional weight of a finance app error.",
     tags: ["Figma", "Content Writing", "Microcopy"],
     slug: "error-state-page",
+    thumbnail: errorThumb,
+    thumbnailAlt: "Thumbnail for an error page project",
   },
   {
     title: "FAQ Development",
@@ -54,6 +72,8 @@ export const projects: Project[] = [
       "Built and maintained a scalable FAQ library across multiple product lines, managing multilingual content workflows and coordinating cross-functional publishing pipelines to support product launches.",
     tags: ["Adobe Dreamweaver", "HTML", "Oxygen XML Editor"],
     slug: "faq-development",
+    thumbnail: faqThumb,
+    thumbnailAlt: "Thumbnail for a set of FAQs",
   },
   {
     title: "Online User's Guide",
@@ -63,6 +83,8 @@ export const projects: Project[] = [
       "Adapted and edited a 291-page user's guide covering 12 projector models, coordinating with an overseas documentation branch to meet North American compliance standards across PDF and HTML formats.",
     tags: ["HTML", "Oxygen XML Editor", "User's Guide"],
     slug: "online-users-guide",
+    thumbnail: ugThumb,
+    thumbnailAlt: "Thumbnail for a user's guide",
   },
   {
     title: "Printed Setup Guide",
@@ -72,6 +94,8 @@ export const projects: Project[] = [
       "Developed a bilingual print and digital setup guide for a large-format business printer, balancing cost constraints, localization requirements, and print clarity for industrial environments.",
     tags: ["Adobe InDesign", "Printed", "User's Guide"],
     slug: "printed-setup-guide",
+    thumbnail: setupThumb,
+    thumbnailAlt: "Thumbnail for a setup guide",
   },
   {
     title: "UX Copy for Push Notifications",
@@ -81,6 +105,8 @@ export const projects: Project[] = [
       "Crafted five push notification messages for Steam's mobile app, each serving a distinct purpose and grounded in realistic platform constraints, user scenarios, and Steam's brand voice.",
     tags: ["Copywriting", "Figma", "Microcopy"],
     slug: "uxcopy-push-notif",
+    thumbnail: uxpushThumb,
+    thumbnailAlt: "Thumbnail for a push notification project",
   },
 ];
 

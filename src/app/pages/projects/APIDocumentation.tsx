@@ -1,51 +1,41 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
+import { ProjectOverview } from "../../components/ProjectOverview";
 import { projects } from "../../data/projects";
 
-import { LightboxImage } from "../../components/LightboxImage";
+import { ProjectScope } from "../../components/ProjectScope";
+import { WorkflowSteps } from "../../components/WorkflowSteps";
+import {
+  endpointCount,
+  interfaceCount,
+  overview,
+  specifications,
+  workflowIntro,
+  workflowSteps,
+} from "../../data/apiData";
+
+/* Image Imports */
+import overviewImage from "../../data/images/api-steam-overview.png";
 
 export function APIDocumentation() {
-  const navigate = useNavigate();
   const project = projects.find(
     (p) => p.slug === "api-documentation",
   )!;
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto py-12">
       {/* Back Navigation */}
-      <button
-        onClick={() => {
-          if (window.location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-              const el = document.getElementById("projects");
-              if (el) {
-                const top =
-                  el.getBoundingClientRect().top +
-                  window.scrollY -
-                  80;
-                window.scrollTo({ top, behavior: "smooth" });
-              }
-            }, 100);
-          } else {
-            const el = document.getElementById("projects");
-            if (el) {
-              const top =
-                el.getBoundingClientRect().top +
-                window.scrollY -
-                80;
-              window.scrollTo({ top, behavior: "smooth" });
-            }
-          }
-        }}
-        className="inline-flex items-center mb-8 uppercase tracking-wide hover:underline"
+      <Link
+        to="/"
+        state={{ scrollTo: "projects" }}
+        className="mb-8 inline-flex items-center uppercase tracking-wide underline-offset-4 hover:underline"
       >
-        ← Back to Home
-      </button>
+        ← Back to Projects
+      </Link>
 
-      {/* Project Header */}
+      {/* HEADER */}
       <header className="mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
-        <div className="mb-4  uppercase tracking-widest text-muted-foreground">
+        <div className="mb-4 uppercase tracking-widest text-muted-foreground">
           {project.category}
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight mb-6">
@@ -66,294 +56,74 @@ export function APIDocumentation() {
             <span className="font-bold block mb-1">ROLE:</span>
             <span>Technical Writer (Solo)</span>
           </div>
+
+          <div className="md:col-span-3">
+            <span className="mb-2 block font-bold">
+              SKILLS &amp; TOOLS:
+            </span>
+            <ul className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="border border-foreground bg-card px-3 py-1 text-xs uppercase tracking-wide"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </header>
+      {/* HEADER END */}
 
-      {/* Project Overview */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Overview
-        </h2>
-        <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
-          <p className="border-l-4 pl-4">
-            View the live documentation at{" "}
-            <a
-              target="_blank"
-              className="hover:underline"
-              href="https://hwittle.github.io/steam-web-api-docs/"
-            >
-              <strong>
-                Unofficial Steam Web API Documentation
-              </strong>
-            </a>
-            .
-          </p>
-          <p>
-            The Steam Web API consists of a number of HTTP
-            endpoints offered by Valve Corporation and is used
-            by developers to obtain Steam user data, information
-            about games, and details regarding community
-            features. Even though the API is commonly used by
-            third-party developers, the official documentation
-            provided by Valve is very limited. The descriptions
-            of the parameters are inconsistent, there are no
-            actual examples of responses given, and the way the
-            privacy settings and the undocumented fields behave
-            is not explained.
-          </p>
-          <p>
-            The aim of this project was to produce clear
-            reference documentation that is convenient for
-            developers for five Steam Web API endpoints, basing
-            each entry on actual API responses which had been
-            obtained through practical testing rather than
-            making assumptions based on the incomplete official
-            sources. The documentation was created using MkDocs
-            Material and then deployed to GitHub Pages by means
-            of GitHub Actions as part of a docs-as-code
-            approach.
-          </p>
-        </div>
-      </section>
+      {/* OVERVIEW */}
+      <ProjectOverview {...overview} />
+      {/* OVERVIEW END */}
 
-      {/* Project Scope */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Project Scope
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border-2 border-foreground bg-card p-6">
-            <h3 className="font-bold mb-3 uppercase">
-              Audience
-            </h3>
-            <p>
-              Developers building Steam integrations or
-              third-party applications who need accurate,
-              detailed endpoint references beyond what Valve's
-              official documentation provides.
-            </p>
-          </div>
-          <div className="border-2 border-foreground bg-card p-6">
-            <h3 className="font-bold mb-3 uppercase">
-              Endpoints Documented
-            </h3>
-            <ul className="space-y-2 leading-relaxed">
-              <h4 className="font-bold">IPlayerService:</h4>
-              <li className="flex items-start pl-4">
-                <span className="mr-2">▸</span>
-                <span>GetOwnedGames</span>
-              </li>
-              <li className="flex items-start pl-4">
-                <span className="mr-2">▸</span>
-                <span>GetRecentlyPlayedGames</span>
-              </li>
-            </ul>
-            <ul className="space-y-2 leading-relaxed">
-              <h4 className="font-bold mt-3">ISteamUser:</h4>
-              <li className="flex items-start pl-4">
-                <span className="mr-2">▸</span>
-                <span>GetFriendList</span>
-              </li>
-              <li className="flex items-start pl-4">
-                <span className="mr-2">▸</span>
-                <span>GetPlayerSummaries</span>
-              </li>
-            </ul>
-            <ul className="space-y-2 leading-relaxed">
-              <h4 className="font-bold mt-3">
-                ISteamUserStats:
-              </h4>
-              <li className="flex items-start pl-4">
-                <span className="mr-2">▸</span>
-                <span>GetPlayerAchievements</span>
-              </li>
-            </ul>
-          </div>
+      {/* PROJECT SCOPE */}
+      <ProjectScope specifications={specifications} />
+      {/* PROJECT SCOPE END */}
 
-          <div className="border-2 border-foreground bg-card p-6">
-            <h3 className="font-bold mb-3 uppercase">
-              Tools Used
-            </h3>
-            <ul className="space-y-2 leading-relaxed">
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>
-                  MkDocs Material — documentation framework
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>
-                  Postman — API testing and response generation
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>
-                  Python virtual environment — local development
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>
-                  Visual Studio Code — content authoring
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>
-                  GitHub Actions — automated deployment
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">▸</span>
-                <span>GitHub Pages — hosting</span>
-              </li>
-            </ul>
-          </div>
+      {/* PROCESS */}
+      <WorkflowSteps
+        intro={workflowIntro}
+        steps={workflowSteps}
+      />
+      {/* PROCESS END */}
 
-          <div className="border-2 border-foreground bg-card p-6">
-            <h3 className="font-bold mb-3 uppercase">
-              Distribution
-            </h3>
-            <p>
-              Publicly available as a static documentation site
-              at{" "}
-              <a
-                target="_blank"
-                className="hover:underline"
-                href="https://hwittle.github.io/steam-web-api-docs/"
-              >
-                <strong>
-                  Unofficial Steam Web API Documentation
-                </strong>
-              </a>{" "}
-              and maintained as an open source repository on
-              GitHub.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Process
-        </h2>
-        <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
-          <p>
-            The documentation process followed a structured
-            workflow from research through deployment, ensuring
-            each endpoint was accurately documented and grounded
-            in real API behavior.
-          </p>
-          <ol className="space-y-2 leading-relaxed list-decimal pl-6">
-            <li>
-              <strong>
-                Reviewed Valve's official documentation
-              </strong>{" "}
-              to identify gaps in parameter descriptions,
-              missing response examples, and undocumented
-              behaviors
-            </li>
-            <li>
-              <strong>Registered a Steam Web API key</strong>{" "}
-              through the Steam developer portal and configured
-              a <strong>Postman</strong> collection to test each
-              endpoint, generating real API responses in JSON,
-              XML, and VDF formats to capture accurate field
-              names, data types, and values.
-            </li>
-            <li>
-              <strong>
-                Identified undocumented fields and privacy
-                behaviors
-              </strong>{" "}
-              through testing, including fields absent from
-              official documentation and endpoint responses that
-              vary based on a user's Steam Community privacy
-              settings.
-            </li>
-            <li>
-              <strong>Structured the documentation site</strong>{" "}
-              using <strong>MkDocs Material</strong>, organizing
-              endpoints by interface group and establishing a
-              consistent page template covering arguments,
-              returns, example requests, and response examples.
-            </li>
-            <li>
-              <strong>Authored all endpoint pages</strong> in{" "}
-              <strong>Markdown</strong> using{" "}
-              <strong>Visual Studio Code</strong>, applying
-              consistent terminology, parameter formatting, and
-              admonition callouts for warnings, notes, and
-              undocumented observations.
-            </li>
-            <li>
-              <strong>Deployed the documentation</strong> to{" "}
-              <strong>GitHub Pages</strong> via a{" "}
-              <strong>GitHub Actions</strong> workflow,
-              automating the build and publish process on every
-              push to the main branch.
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      {/* Reflection */}
+      {/* REFLECTION */}
       <section className="mb-16">
         <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
           Reflection
         </h2>
         <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
           <p>
-            The project showed that well-written documentation
-            covers the areas that official sources fail to
-            address. While Valve's current Steam Web API
-            documentation offers a functional yet basic level of
-            coverage, the most useful contributions were made
-            through actual testing rather than by simply copying
-            what had already been written. It was only by
-            identifying undocumented fields, inconsistent data
-            types, and privacy practices that quietly influence
-            the responses that the documentation acquired a
-            practical depth which developers could not obtain
-            elsewhere.
+            The project showed that the most useful
+            documentation comes from testing, not from restating
+            existing sources. Capturing real responses exposed
+            undocumented fields, inconsistent data types, and
+            privacy settings that quietly change what an
+            endpoint returns, which gave the documentation a
+            practical depth that reading alone would not.
           </p>
           <p>
-            When you first adopt a docs-as-code workflow, the
-            link between documentation and software development
-            becomes clear. Since writing in Markdown, handling
-            versions using GitHub, and automating deployments
-            with GitHub Actions is just like the way engineering
-            teams release code, gaining a first-hand
-            understanding of that process makes it more
-            meaningful to work with developers on documentation
-            projects.
+            Working in a docs-as-code workflow made the link
+            between documentation and software development
+            concrete. Writing in Markdown, versioning in GitHub,
+            and deploying with GitHub Actions mirrors how
+            engineering teams release code, which makes
+            collaborating with developers on documentation feel
+            familiar.
           </p>
           <p>
-            The improvements ahead will consist of expanding the
-            coverage to include interfaces such as ISteamNews or
-            ISteamApps, together with the inclusion of a
-            separate troubleshooting section based on the common
-            error responses observed during testing.
+            Next, I plan to expand coverage to interfaces such
+            as ISteamNews and ISteamApps, and to add a
+            troubleshooting section based on the error responses
+            I observed during testing.
           </p>
         </div>
       </section>
-
-      {/* Tags */}
-      <section className="mb-16">
-        <div className="flex flex-wrap gap-3">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-4 py-2 bg-foreground text-background uppercase tracking-wide"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </section>
+      {/* REFLECTION END */}
 
       <ProjectNavigation currentSlug="api-documentation" />
     </div>

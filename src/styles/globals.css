@@ -1,0 +1,114 @@
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Courier Prime", "Courier New", monospace;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: "Special Elite", "Courier New", monospace;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    font-family: "Special Elite", "Courier New", monospace;
+  }
+
+  h3, dt {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: "Courier Prime", "Courier New", monospace;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: "Courier Prime", "Courier New", monospace;
+  }
+
+  p,
+  li,
+  dd {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  --link: #3e2723;
+  --link-hover: #eeeeee;
+  --link-hover-bg: #4e2f2c;
+
+  .content-link {
+    color: var(--link);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-decoration: underline;
+  }
+  .content-link: hover {
+    color: var(--link-hover);
+    background-color: var(--link-hover-bg);
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .font-headline {
+    font-family: "Special Elite", "Courier New", monospace;
+  }
+
+  .font-typewriter {
+    font-family: "Courier Prime", "Courier New", monospace;
+  }
+
+  .font-georgia {
+    font-family: Georgia, "Times New Roman", serif;
+  }
+}
+
+@keyframes headline-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

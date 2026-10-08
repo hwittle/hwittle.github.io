@@ -29,14 +29,19 @@
  */
 
 import { Outlet, useLocation } from "react-router";
-import { Header } from "../components/Header";
 import { useEffect } from "react";
+import { Header } from "../components/Header";
+import { projects } from "../data/projects";
 
 export function Root() {
   const location = useLocation();
 
-  // Scroll to top on route change
+  // Scroll to top on route change, unless the destination handles its own scroll
   useEffect(() => {
+    if (
+      (location.state as { scrollTo?: string } | null)?.scrollTo
+    )
+      return;
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
@@ -46,9 +51,24 @@ export function Root() {
       <Header />
 
       {/* Main Content Area - Child routes render here via Outlet */}
-      <main className="flex-1">
+      <main id="main" className="flex-1 px-4 lg:px-45 xl:px-60">
         <Outlet />
       </main>
+      {/* FOOTER */}
+      <div className="text-center text-sm text-muted-foreground mt-16 pt-8 pb-12 border-t border-foreground/20">
+        <p>
+          ◆{" "}
+          <span className="hidden sm:inline">
+            {projects.length} Projects ◆{" "}
+          </span>
+          Est. 2026
+          <span className="hidden sm:inline">
+            {" "}
+            ◆ Crafted with care
+          </span>{" "}
+          ◆
+        </p>
+      </div>
     </div>
   );
 }

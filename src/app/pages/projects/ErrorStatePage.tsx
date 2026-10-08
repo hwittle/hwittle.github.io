@@ -1,50 +1,32 @@
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 import { ProjectNavigation } from "../../components/ProjectNavigation";
+import { ProjectOverview } from "../../components/ProjectOverview";
 import { projects } from "../../data/projects";
 
+import { overview, rationale } from "../../data/errorData";
+
 import { LightboxImage } from "../../components/LightboxImage";
-import ErrorImage from "../../images/Connectivity Error State.png";
+
+/* Image Imports */
+import ErrorImage from "../../data/images/connectivity-error-state.png";
 
 export function ErrorStatePage() {
-  const navigate = useNavigate();
   const project = projects.find(
     (p) => p.slug === "error-state-page",
   )!;
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto py-12">
       {/* Back Navigation */}
-      <button
-        onClick={() => {
-          if (window.location.pathname !== "/") {
-            navigate("/");
-            setTimeout(() => {
-              const el = document.getElementById("projects");
-              if (el) {
-                const top =
-                  el.getBoundingClientRect().top +
-                  window.scrollY -
-                  80;
-                window.scrollTo({ top, behavior: "smooth" });
-              }
-            }, 100);
-          } else {
-            const el = document.getElementById("projects");
-            if (el) {
-              const top =
-                el.getBoundingClientRect().top +
-                window.scrollY -
-                80;
-              window.scrollTo({ top, behavior: "smooth" });
-            }
-          }
-        }}
-        className="inline-flex items-center mb-8 uppercase tracking-wide hover:underline"
+      <Link
+        to="/"
+        state={{ scrollTo: "projects" }}
+        className="mb-8 inline-flex items-center uppercase tracking-wide underline-offset-4 hover:underline"
       >
-        ← Back to Home
-      </button>
+        ← Back to Projects
+      </Link>
 
-      {/* Project Header */}
+      {/* HEADER */}
       <header className="mb-12 border-b-2 border-dashed border-foreground/30 pb-8">
         <div className="mb-4 uppercase tracking-widest text-muted-foreground">
           {project.category}
@@ -67,185 +49,57 @@ export function ErrorStatePage() {
             <span className="font-bold block mb-1">ROLE:</span>
             <span>UX Writer</span>
           </div>
-        </div>
-      </header>
 
-      {/* Project Overview */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Overview
-        </h2>
-        <div className="w-full space-y-4 leading-relaxed border-2 border-foreground bg-card p-6">
-          <p>
-            This project was completed as part of the Uxcel UX
-            Writing certification, designing a 404 error page
-            for a finance platform. I chose Chime, whose
-            conversational, empowering brand voice stands out in
-            an industry that leans formal. Instead of a
-            traditional 404, unlikely in a native app where
-            users can't alter URLs, I designed for a
-            connectivity error. This is a more realistic and
-            emotionally charged failure point for a finance app,
-            especially mid-transaction. The project includes
-            both mobile and desktop versions, matching Chime's
-            existing tone.
-          </p>
-        </div>
-      </section>
-
-      {/* Rationale */}
-      <section className="mb-16">
-        <h2 className="text-3xl uppercase tracking-wide border-l-4 border-foreground pl-4 mb-6">
-          Rationale
-        </h2>
-        <div className="grid md:grid-cols-1 gap-6">
-          <div className="border-2 border-foreground bg-card p-6">
-            <div className="order-1 flex justify-center">
-              <div className="md:w-3/4">
-                <LightboxImage
-                  src={ErrorImage}
-                  alt="Mobile and desktop mockup of Chime's connectivity error screen with 'Looks like you're offline' message and frog illustration."
-                  className="border-2 p-1"
-                />
-              </div>
-            </div>
-            <div className="order-2 grid md:grid-cols-2 md:gap-6 space-y-2 leading-relaxed">
-              <div className="space-y-2">
-                <h3 className="pt-6">
-                  Choosing a Connectivity Error Over a
-                  Traditional 404
-                </h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Native apps don't let users manually enter
-                      or change URLs, making a 404 unlikely.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      A connectivity error is a more realistic,
-                      higher-stakes failure. Losing connection
-                      mid-transaction causes real anxiety about
-                      money and security.{" "}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h3 className="pt-6">Headline</h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      "Looks like you're offline" replaces
-                      alarming alternatives like "No connection
-                      detected" or technical terms like "Network
-                      error".
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Conversational phrasing matches Chime's
-                      tone and explains the issue plainly
-                      without raising user anxiety.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-t-2 border-dashed border-foreground/30 space-y-2 pr-2">
-                <h3 className="pt-2">Body Copy</h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Three sequential recovery steps: check
-                      connection. "Still no luck?" acknowledges
-                      frustration before offering the next step.
-                      Then "close the app and come back"
-                      provides a concrete alternative.{" "}
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Closing line ("Your transactions will show
-                      you exactly where things stand") reassures
-                      without promising a transaction outcome
-                      the app can't guarantee.{" "}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-t-2 border-dashed border-foreground/30 space-y-2">
-                <h3 className="pt-2">
-                  Single CTA (Call-to-Action)
-                </h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Only one action, "Try Again", reduces
-                      cognitive load during an already
-                      frustrating moment
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Other navigation was deliberately omitted
-                      because it requires a connection to
-                      function. Including it would create a
-                      false sense of options.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-t-2 border-dashed border-foreground/30 space-y-2 pr-2">
-                <h3 className="pt-2">Illustration</h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Reuses Chime's existing 404 frog mascot in
-                      a new error context, preserving brand
-                      warmth and signaling a "minor
-                      inconvenience," not a serious problem.
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-t-2 border-dashed border-foreground/30 space-y-2">
-                <h3 className="pt-2">
-                  Mobile and Desktop Versions
-                </h3>
-                <ul className="space-y-2 leading-relaxed pb-4">
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      The same copy is used across both since
-                      the error and recovery steps don't change
-                      by device.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">▸</span>
-                    <span>
-                      Layout adapts per platform: mobile stacks
-                      illustration above copy for thumb
-                      navigation; desktop places them side by
-                      side with a larger illustration
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div className="md:col-span-3">
+            <span className="mb-2 block font-bold">
+              SKILLS &amp; TOOLS:
+            </span>
+            <ul className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="border border-foreground bg-card px-3 py-1 text-xs uppercase tracking-wide"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+      </header>
+      {/* HEADER END */}
+
+      {/* OVERVIEW */}
+      <ProjectOverview {...overview} />
+      {/* OVERVIEW END */}
+
+      {/* RATIONALE */}
+      <section className="mb-16">
+        <h2 className="mb-6 border-l-4 border-foreground pl-4 text-3xl uppercase tracking-wide">
+          Rationale
+        </h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {rationale.map(({ title, points }) => (
+            <div
+              key={title}
+              className="border-2 border-foreground bg-card p-6"
+            >
+              <h3 className="mb-3 uppercase tracking-wide">
+                {title}
+              </h3>
+              <ul className="space-y-2 leading-relaxed">
+                {points.map((point) => (
+                  <li key={point} className="flex items-start">
+                    <span className="mr-2">▸</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
+      {/* RATIONALE END */}
 
       {/* Reflection */}
       <section className="mb-16">
@@ -301,20 +155,6 @@ export function ErrorStatePage() {
             requirements and thus would show how Chime's voice
             adjusts throughout various moments of friction.
           </p>
-        </div>
-      </section>
-
-      {/* Tags */}
-      <section className="mb-16">
-        <div className="flex flex-wrap gap-3">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-4 py-2 bg-foreground text-background uppercase tracking-wide"
-            >
-              {tag}
-            </span>
-          ))}
         </div>
       </section>
 

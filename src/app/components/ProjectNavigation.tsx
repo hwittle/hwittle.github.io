@@ -1,8 +1,28 @@
 import { Link } from "react-router";
-import { getSortedProjects } from "../data/projects";
+import { getSortedProjects, type Project } from "../data/projects";
 
 interface ProjectNavigationProps {
   currentSlug: string;
+}
+
+function NavCard({ project, direction }: { project: Project; direction: "prev" | "next" }) {
+  const isNext = direction === "next";
+  return (
+    <Link
+      to={`/projects/${project.slug}`}
+      className={`block border-2 border-foreground bg-card p-5 transition-shadow hover:shadow-[4px_4px_0_0_var(--foreground)] focus-visible:shadow-[4px_4px_0_0_var(--foreground)] ${
+        isNext ? "text-right" : "text-left"
+      }`}
+    >
+      <span className="block text-xs uppercase tracking-widest text-muted-foreground">
+        {isNext ? "Next project →" : "← Previous project"}
+      </span>
+      <span className="mt-1 block uppercase tracking-wide">{project.title}</span>
+      <span className="mt-1 block text-xs uppercase tracking-widest text-muted-foreground">
+        {project.category}
+      </span>
+    </Link>
+  );
 }
 
 export function ProjectNavigation({ currentSlug }: ProjectNavigationProps) {
@@ -13,23 +33,20 @@ export function ProjectNavigation({ currentSlug }: ProjectNavigationProps) {
   const next = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null;
 
   return (
-    <div className={`border-t-2 border-foreground pt-8 flex ${!prev ? "justify-end" : "justify-between"}`}>
-      {prev && (
+    <nav aria-label="More projects" className="border-t-2 border-foreground pt-8">
+      <div className="grid gap-4 sm:grid-cols-2">
+        {prev ? <NavCard project={prev} direction="prev" /> : <span className="hidden sm:block" />}
+        {next ? <NavCard project={next} direction="next" /> : <span className="hidden sm:block" />}
+      </div>
+      <p className="mt-6 text-center">
         <Link
-          to={`/projects/${prev.slug}`}
-          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
+          to="/"
+          state={{ scrollTo: "projects" }}
+          className="font-typewriter uppercase tracking-widest underline-offset-4 hover:underline hover:decoration-foreground/80 focus-visible:outline-2 focus-visible:outline-offset-4"
         >
-          ← Previous Project
+          All projects
         </Link>
-      )}
-      {next && (
-        <Link
-          to={`/projects/${next.slug}`}
-          className="px-6 py-3 border-2 border-foreground uppercase tracking-wide hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] transition-all"
-        >
-          Next Project →
-        </Link>
-      )}
-    </div>
+      </p>
+    </nav>
   );
 }
