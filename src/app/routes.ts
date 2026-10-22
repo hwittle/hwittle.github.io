@@ -23,6 +23,7 @@
  * - Project pages: /src/app/pages/projects/*.tsx
  */
 
+import { createElement } from "react";
 import { createBrowserRouter } from "react-router";
 import { Root } from "./pages/Root";
 import { Home } from "./pages/Home";
@@ -34,6 +35,7 @@ import { OnlineUsersGuide } from "./pages/projects/OnlineUsersGuide";
 import { PrintedSetupGuide } from "./pages/projects/PrintedSetupGuide";
 import { UXCopyPushNotif } from "./pages/projects/UXCopyPushNotif";
 import { About } from "./pages/About";
+import { NotFound } from "./pages/NotFound";
 
 // NOTE: Project paths below should match the "slug" field from /src/app/data/projects.ts
 // When you update a project slug in projects.ts, update the corresponding path here as well
@@ -42,36 +44,44 @@ export const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: Home },
-      { path: "about", Component: About },
-      // Individual project detail pages - paths match slugs from data/projects.ts
       {
-        path: "projects/api-documentation",
-        Component: APIDocumentation,
-      },
-      {
-        path: "projects/content-audit-optimize",
-        Component: ContentAuditOptimize,
-      },
-      {
-        path: "projects/error-state-page",
-        Component: ErrorStatePage,
-      },
-      {
-        path: "projects/faq-development",
-        Component: FAQDevelopment,
-      },
-      {
-        path: "projects/online-users-guide",
-        Component: OnlineUsersGuide,
-      },
-      {
-        path: "projects/printed-setup-guide",
-        Component: PrintedSetupGuide,
-      },
-      {
-        path: "projects/uxcopy-push-notif",
-        Component: UXCopyPushNotif,
+        // Error boundary wrapper: catches errors in any child while keeping Root's Header visible
+        errorElement: createElement(NotFound),
+        children: [
+          { index: true, Component: Home },
+          { path: "about", Component: About },
+          // Individual project detail pages - paths match slugs from data/projects.ts
+          {
+            path: "projects/api-documentation",
+            Component: APIDocumentation,
+          },
+          {
+            path: "projects/content-audit-optimize",
+            Component: ContentAuditOptimize,
+          },
+          {
+            path: "projects/error-state-page",
+            Component: ErrorStatePage,
+          },
+          {
+            path: "projects/faq-development",
+            Component: FAQDevelopment,
+          },
+          {
+            path: "projects/online-users-guide",
+            Component: OnlineUsersGuide,
+          },
+          {
+            path: "projects/printed-setup-guide",
+            Component: PrintedSetupGuide,
+          },
+          {
+            path: "projects/uxcopy-push-notif",
+            Component: UXCopyPushNotif,
+          },
+          // Catch-all 404 for any unmatched path
+          { path: "*", Component: NotFound },
+        ],
       },
     ],
   },
