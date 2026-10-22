@@ -7,9 +7,6 @@ import { ProjectScope } from "../../components/ProjectScope";
 import { ProcessCards } from "../../components/ProcessCards";
 import { overview, specifications, steps } from "../../data/setupData";
 
-/* Image Imports */
-import overviewImage from "../../data/images/setup-guide-overview.png";
-
 export function PrintedSetupGuide() {
   const project = projects.find(
     (p) => p.slug === "printed-setup-guide",

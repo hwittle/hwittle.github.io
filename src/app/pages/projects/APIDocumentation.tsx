@@ -14,9 +14,6 @@ import {
   workflowSteps,
 } from "../../data/apiData";
 
-/* Image Imports */
-import overviewImage from "../../data/images/api-steam-overview.png";
-
 export function APIDocumentation() {
   const project = projects.find(
     (p) => p.slug === "api-documentation",

@@ -14,14 +14,14 @@
  *
  * Child Routes (defined in /src/app/routes.ts):
  * - / → Home.tsx (landing page)
- * - /projects → Projects.tsx (project listing)
+ * - /about → About.tsx
  * - /projects/:slug → Individual project pages
  *
  * CSS/Styles:
  * - min-h-screen: Ensures full viewport height
  * - flex-1: Main area expands to fill available space
  * - Tailwind CSS v4 inline classes
- * - Global styles: /src/styles/global.css
+ * - Global styles: /src/styles/globals.css
  * - Theme tokens: /src/styles/theme.css
  *
  * Layout Flow:

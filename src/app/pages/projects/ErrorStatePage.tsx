@@ -7,9 +7,6 @@ import { overview, rationale } from "../../data/errorData";
 
 import { LightboxImage } from "../../components/LightboxImage";
 
-/* Image Imports */
-import ErrorImage from "../../data/images/connectivity-error-state.png";
-
 export function ErrorStatePage() {
   const project = projects.find(
     (p) => p.slug === "error-state-page",

@@ -16,7 +16,7 @@
  * Related Files:
  * - Routes config: /src/app/routes.ts
  * - Root layout: /src/app/pages/Root.tsx
- * - Global styles: /src/styles/global.css
+ * - Global styles: /src/styles/globals.css
  * - Theme tokens: /src/styles/theme.css
  * - Fonts: /src/styles/fonts.css
  */

@@ -7,9 +7,6 @@ import { ProjectScope } from "../../components/ProjectScope";
 import { ProcessCards } from "../../components/ProcessCards";
 import { overview, specifications, steps } from "../../data/faqData";
 
-/* Image Imports */
-import overviewImage from "../../data/images/faq-dev-overview.png";
-
 export function FAQDevelopment() {
   const project = projects.find(
     (p) => p.slug === "faq-development",

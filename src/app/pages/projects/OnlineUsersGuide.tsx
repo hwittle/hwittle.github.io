@@ -11,9 +11,6 @@ import {
   steps,
 } from "../../data/ugData";
 
-/* Image Imports */
-import overviewImage from "../../data/images/ug-html-overview.png";
-
 export function OnlineUsersGuide() {
   const project = projects.find(
     (p) => p.slug === "online-users-guide",

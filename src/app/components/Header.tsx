@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
   { label: "About", to: "/about" },
 ];
 
-const resumeHref = "/resume.pdf";
+const resumeHref = `${import.meta.env.BASE_URL}Whitney-Tran-Resume.pdf`;
 
 const linkBase =
   "text-sm uppercase tracking-widest underline-offset-4 hover:underline hover:decoration-foreground/80 focus-visible:outline-2 focus-visible:outline-offset-4";

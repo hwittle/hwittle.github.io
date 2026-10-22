@@ -1,8 +1,7 @@
 import { projects, getGroupedProjects } from "../data/projects";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { Masthead } from "../components/Masthead";
 import { RotatingHeadline } from "../components/RotatingHeadline";
-import { useLocation } from "react-router";
 import { useEffect } from "react";
 
 export function Home() {
@@ -24,7 +23,7 @@ export function Home() {
   return (
     <div className="container mx-auto pt-6">
       <Masthead>
-        Vol. V · Issue 005 ·{" "}
+        Vol. V · Issue 006 ·{" "}
         {new Date().toLocaleDateString("en-US", {
           month: "long",
           year: "numeric",
