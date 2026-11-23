@@ -1,3 +1,7 @@
+/*
+COMPONENT FILE
+Contains table script for content auditing page.
+*/
 import { clsx } from "clsx";
 import { LightboxImage } from "./LightboxImage";
 

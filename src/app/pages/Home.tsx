@@ -23,7 +23,7 @@ export function Home() {
   return (
     <div className="container mx-auto pt-6">
       <Masthead>
-        Vol. V · Issue 007 ·{" "}
+        Vol. V · Issue 008 ·{" "}
         {new Date().toLocaleDateString("en-US", {
           month: "long",
           year: "numeric",
