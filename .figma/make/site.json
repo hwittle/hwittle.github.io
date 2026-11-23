@@ -1,0 +1,14 @@
+{
+  "description": "Turning complex products into clear experiences. Technical writer specializing in product docs, APIs, and docs-as-code—now exploring UX writing.\n---\nWelcome to my portfolio's repository. I created my site using React on Visual Studio Code.\n\nYou will find my work and projects for technical and UX writing.",
+  "language": "en",
+  "robots": {
+    "index": false
+  },
+  "icons": {
+    "icon": "/.figma/make/favicon.png"
+  },
+  "accessibility": {
+    "addBypassLinks": true,
+    "ignoreReducedMotion": true
+  }
+}
